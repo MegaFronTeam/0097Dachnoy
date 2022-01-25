@@ -7,6 +7,7 @@
 	top: var(--header-h);
 	left: 0;
 	width: 100%;
+	background-color: $gray-900;
 
 	&__container{
 		@include media-breakpoint-down(sm){
@@ -188,6 +189,9 @@
 		}
 	}
 
+	&--index {
+		background-color: transparent;
+	}
 	&__{}
 	&__{}
 } // end.topLine

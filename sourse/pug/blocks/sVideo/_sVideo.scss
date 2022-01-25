@@ -1,0 +1,62 @@
+// start .sVideo
+.sVideo {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+	background-color: $white;
+	.section-title {
+		&__row {
+			align-items: flex-end;
+		}
+		h2 {
+			margin-bottom: rem(25);
+			font-size: rem(22.75);
+			@include media-breakpoint-up(sm) {
+				font-size: rem(28);
+			}
+			@include media-breakpoint-up(md) {
+				font-size: rem(40);
+			}
+			@include media-breakpoint-up(lg) {
+				font-size: rem(56);
+			}
+		}
+		p {
+			max-width: rem(309);
+			margin-bottom: rem(25);
+		}
+		button {
+			@extend .btn, .btn-primary;
+			text-transform: uppercase;
+			font-weight: 700;
+			padding-top: rem(26);
+			padding-bottom: rem(26);
+			padding-left: rem(33);
+			padding-right: rem(33);
+			@include media-breakpoint-down(sm) {
+				font-size: rem(12);
+			}
+		}
+	}
+	&__wrap {
+		position: relative;
+		@include block(1206, 540);
+		@include media-breakpoint-down(md) {
+			--ratio: 852/1206;
+		}
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sVideo

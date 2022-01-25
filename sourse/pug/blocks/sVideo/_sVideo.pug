@@ -1,0 +1,16 @@
+mixin sVideo(data)
+	// start sVideo
+	+b.SECTION.sVideo.section#sVideo&attributes(attributes)
+		.container 
+			+b.sm-yellow--title ВИДЕО
+			+b.section-title
+				+e.row.row
+					.col-lg
+						h2 Коротко о&nbsp;строительной компании &laquo;Дачный Рай&raquo;
+					.col-lg-auto
+						p В&nbsp;двух словах расскажем о&nbsp;нашем отношении к&nbsp;любимому делу &minus; строительству деревянных домов.
+					.col-lg-auto 
+						button(type="button") Смотрите больше видео на&nbsp;нашем канале
+			+e.wrap
+				<iframe src="https://www.youtube.com/embed/L_LUpnjgPso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	// end sVideo

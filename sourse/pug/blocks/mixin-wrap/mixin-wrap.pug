@@ -28,3 +28,44 @@ mixin addblock()
 		+e.btn--minus(type="button")
 		input(type="text" value="1")
 		+e.btn--plus(type="button")
+
+mixin page-head(title, ...items)
+	+b.page-head
+		.container 
+			h1!= title 
+			+breadcrumb('Главная', ...items)
+
+mixin inner-content()
+	.container.container--main
+		.row
+			.col-lg-8.col--main
+				block
+			.col-lg-4.col--aside
+				+b.choose-project
+					h5 Выбрать проект:
+					a(href="#")
+						+pic('headerBlock-1.jpg')
+						+e.content 
+							p каркасные дома
+							+icon('link-arrow')
+							span от 341 100 ₽
+					a(href="#")
+						+pic('headerBlock-2.jpg')
+						+e.content 
+							p дома из бруса
+							+icon('link-arrow')
+							span от 295 000 ₽
+					a(href="#")
+						+pic('headerBlock-3.jpg')
+						+e.content 
+							p бани из бруса
+							+icon('link-arrow')
+							span от 250 000 ₽
+				+b.consultation
+					h5 Нужна консультация?
+					p Мы перезвоним вам в течение 5&nbsp;минут и ответим на любые вопросы.
+					+form-wrap()
+						+input('Ваше имя')
+						+input('+7 (_ _ _) _ _ _ - _ _ - _ _', 'tel')
+						button(type='submit') Отправить
+						+in-c('checkbox', 'Согласен на обработку данных')

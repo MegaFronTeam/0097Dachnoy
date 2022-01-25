@@ -1,0 +1,64 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sCatalog/_sCatalog.pug
+//- include ../blocks/sCards/_sCards.pug
+include ../blocks/sWork/_sWork.pug
+//- include ../blocks/sLast/_sLast.pug
+//- include ../blocks/sTalk/_sTalk.pug
+include ../blocks/sVideo/_sVideo.pug
+
+block variables
+	- let  mainPage= 'inner-page' 
+	- let  bg='01-380.png'
+
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+	+b.fixed-btns
+		+e.btn(href="#")
+			+icon('calculator')
+		+e.btn(href="#")
+			+icon('tell')
+		+e.btn(href="#")
+			+icon('chat')
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+topLine()
+	+page-head('Как мы работаем', 'Клиентам')
+	+inner-content()
+		+b.sWork
+			+e.items-wrap
+				+e.items-row.row
+					+sWorkItem(1, 'Согласование')
+						| Согласовываем с клиентом проект и&#160;договор, где будут прописаны все условия, гарантии и обязательства.
+					+sWorkItem(2, 'Доставка')
+						| Доставляем материал и&#160;рабочую бригаду на&#160;место проведения строительных работ.
+					+sWorkItem(3, 'Выгрузка')
+						| Выгрузка материала производится бесплатно в рамках 50 м от возможного места стоянки автотранспорта.
+					+sWorkItem(4, 'Приемка материала')
+						| Клиент принимает материал и вносит оплату в соответствии с договором.
+					+sWorkItem(5, 'Строительство')
+						| Производим все основные строительные работы от возведения фундамента, до прокладки инженерных сетей.
+					+sWorkItem(6, 'Отделка')
+						| Выполняем внешнюю и внутреннюю финишную отделку в соответствии с проектом.
+					+sWorkItem(7, 'Приемка объекта')
+						| Клиент осматривает объект строительства, подписываем акт приемки-сдачи.
+					+sWorkItem(8, 'Окончательный расчет')
+						| Клиент выплачивает оставшуюся сумму по&#160;договору.
+	+sVideo()
+	//- +headerBlock()
+	//- +sAbout()
+	//- +sCards()
+	//- +sWork()
+	//- +sLast()
+	//- +sTalk()
+	//- +sForm()
+	//- +sCatalog()
+	+sContact()
+	//-+footer()

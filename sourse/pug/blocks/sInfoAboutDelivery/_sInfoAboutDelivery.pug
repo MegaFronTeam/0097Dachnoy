@@ -1,0 +1,52 @@
+mixin sInfoAboutDelivery(data)
+	// start sInfoAboutDelivery
+	+b.SECTION.sInfoAboutDelivery.section#sInfoAboutDelivery&attributes(attributes)
+			p Мы&nbsp;занимаемся строительством в&nbsp;Ленинградской, Московской, Новгородской, Нижегородской, Вологодской, Тверской и&nbsp;других областях Северо-Запада и&nbsp;Центра России.
+			+e.wrap
+				.row
+					.col-lg-6
+						+e.content
+							img(src="img/svg/delivery-icon-1.svg", alt="")
+							p Доставка на&nbsp;500&nbsp;км от&nbsp;нашей производственной базы&nbsp;&mdash; бесплатно. Сюда входят большинство Московской и&nbsp;Ленинградской областей.
+					.col-lg-6
+						+e.content
+							img(src="img/svg/delivery-icon-2.svg", alt="")
+							p Выгрузка материала производится бесплатно в&nbsp;рамках 50&nbsp;м от&nbsp;возможного места стоянки автотранспорта.
+			p Если нет подходящего заезда на&nbsp;участок, и&nbsp;расстояние от&nbsp;места стоянки до&nbsp;места строительства превышает 50&nbsp;м, то&nbsp;разгрузочные работы оплачиваются отдельно и&nbsp;рассчитываются в&nbsp;индивидуальном порядке.
+			+e.map-wrap
+				h2 Адрес производства
+				p Новгородская область, г. Пестово, ул. Строителей д.2
+				+e.map
+					#map(data-mark="img/svg/circle-map.svg")
+					//- <div id="map"style="width:100%; height:360px"></div>
+					<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+					script.
+						const map = document.querySelector('#map');
+						document.addEventListener('DOMContentLoaded', function(event) {
+							ymaps.ready(init);
+						});
+						function init () {
+								//- var center = [55.75322550427434,37.65589449999999];
+								var center = [58.5806113037127,35.80192931216951];
+								var myMap = new ymaps.Map("map", {
+												center: center,
+												zoom: 13
+										}),
+										myPlacemark = new ymaps.Placemark([58.5806113037127,35.80192931216951], {
+												// Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+												balloonContentHeader: "",
+												balloonContentBody: "Пестово, престово",
+												balloonContentFooter: "",
+												hintContent: "Адресс"
+										});
+								myMap.geoObjects.add(myPlacemark);
+
+								myMap.behaviors.disable('scrollZoom');
+								//на мобильных устройствах... (проверяем по userAgent браузера)
+								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+								//... отключаем перетаскивание карты
+									myMap.behaviors.disable('drag');
+								}
+								// Добавляем все метки на карту.
+							};
+	// end sInfoAboutDelivery

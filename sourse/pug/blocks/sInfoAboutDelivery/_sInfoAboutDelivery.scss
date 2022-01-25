@@ -1,0 +1,86 @@
+// start .sInfoAboutDelivery
+.sInfoAboutDelivery {
+	--sPT: 0;
+	--sPB: 0;
+	// --sTPB: ;
+	max-width: rem(720);
+	p {
+		color: $gray-900;
+		line-height: 1.68em;
+		margin-bottom: 0;
+	}
+	& > p {
+		&:last-of-type {
+			margin-bottom: rem(60);
+		}
+	}
+	&__wrap {
+		padding-top: rem(31);
+		padding-bottom: rem(36);
+	}
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		&:first-child {
+			@include media-breakpoint-down(lg) {
+				margin-bottom: rem(20);
+			}
+		}
+		img {
+			margin-right: rem(32);
+		}
+		p {
+			font-size: rem(14);
+			line-height: 1.71em;
+			&:before {
+				content: '';
+				display: block;
+				width: rem(28);
+				height: rem(2);
+				background-color: $yellow;
+				margin-bottom: rem(12);
+			}
+		}
+	}
+	&__map-wrap {
+		h2 {
+			@include rfs(36px);
+			margin-bottom: rem(19);
+			&::before {
+				content: '';
+				display: block;
+				width: rem(50);
+				height: rem(3);
+				background-color: $yellow;
+				margin-bottom: rem(20);
+			}
+		}
+		p {
+			margin-bottom: rem(29);
+		}
+	}
+	&__map {
+		position: relative;
+		// height: rem(751);
+		// min-height: rem(400);
+		max-height: rem(751);
+		@include block(720, 362);
+		@include media-breakpoint-down(lg) {
+			margin-bottom: rem(30);
+		}
+		& > * {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sInfoAboutDelivery

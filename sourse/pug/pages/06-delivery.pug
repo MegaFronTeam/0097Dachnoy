@@ -1,0 +1,47 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sCatalog/_sCatalog.pug
+//- include ../blocks/sCards/_sCards.pug
+include ../blocks/sWork/_sWork.pug
+//- include ../blocks/sLast/_sLast.pug
+//- include ../blocks/sTalk/_sTalk.pug
+include ../blocks/sVideo/_sVideo.pug
+include ../blocks/sInfoAboutDelivery/_sInfoAboutDelivery.pug
+
+block variables
+	- let  mainPage= 'inner-page' 
+	- let  bg='01-380.png'
+
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+	+b.fixed-btns
+		+e.btn(href="#")
+			+icon('calculator')
+		+e.btn(href="#")
+			+icon('tell')
+		+e.btn(href="#")
+			+icon('chat')
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+topLine()
+	+page-head('Как мы работаем', 'Клиентам')
+	+inner-content()
+		+sInfoAboutDelivery()
+	+sVideo()
+	//- +headerBlock()
+	//- +sAbout()
+	//- +sCards()
+	//- +sWork()
+	//- +sLast()
+	//- +sTalk()
+	//- +sForm()
+	//- +sCatalog()
+	+sContact()
+	//-+footer()
