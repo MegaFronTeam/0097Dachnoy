@@ -247,7 +247,7 @@
 
 .breadcrumb {
 	&::before {
-		content: url('/img/svg/breadcrumb-img.svg');
+		content: url('../img/svg/breadcrumb-img.svg');
 		padding-right: rem(10);
 	}
 	&-item {

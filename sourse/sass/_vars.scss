@@ -1348,7 +1348,7 @@ $breadcrumb-bg: null !default;
 $breadcrumb-divider-color: $gray-600 !default;
 $breadcrumb-active-color: $gray-600 !default;
 // $breadcrumb-divider: quote("/") !default;
-$breadcrumb-divider: url('/img/svg/breadcrumb-divider.svg') !default;
+$breadcrumb-divider: url('../img/svg/breadcrumb-divider.svg') !default;
 $breadcrumb-divider-flipped: $breadcrumb-divider !default;
 $breadcrumb-border-radius: null !default;
 // scss-docs-end breadcrumb-variables
