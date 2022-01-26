@@ -9,63 +9,196 @@ mixin contactInfo-content(title, text, tel, link)
 mixin sContactInfoCard(data)
 	// start sContactInfoCard
 	+b.SECTION.sContactInfoCard.section#sContactInfoCard&attributes(attributes)
-		.container 
 			+b.contactInfo-wrap
-				.row
-					.col-lg-7
-						+b.section-title
-							+b.sm-yellow--title САНКТ-ПЕТЕРБУРГ / ЮГО-ВОСТОК / Дачный рай
-							h2 ОФИС КУДРОВО
-						+contactInfo-content('Адрес', 'Санкт-Петербург, Мурманское шоссе, 12-й километр, д. 21&nbsp;(на&nbsp;Выставке Экспо ДОМ Кудрово, территория ТРЦ &laquo;Мега Дыбенко&raquo; выставочный дом &#8470;&nbsp;21)')
-						+contactInfo-content('Телефон', '', '+7 (812) 942-94-69', 'tel:+78129429469')
-						+contactInfo-content('Телефон', '', '+7 (921) 746-93-31 (Андрей)', 'tel:+79217469331')
-						+contactInfo-content('Режим работы', '11:00-19:00 (без обеда и&nbsp;выходных)')
-						+contactInfo-content('E-mail', '', 'info@dachnyi-rai.ru', 'mailto:info@dachnyi-rai.ru')
-						+e.link(href="#") Смотреть проект выставочного дома К-91 / 121 кв. м. / 9,0 х 8,0 м
-						button записаться на экскурсию
-					.col-lg-5
-						+e.map
-							#map()
-							//- <div id="map"style="width:100%; height:360px"></div>
-							<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
-							script.
-								const map = document.querySelector('#map');
-								document.addEventListener('DOMContentLoaded', function(event) {
-									ymaps.ready(init);
-								});
-								function init () {
-										var center = [59.8902120173829,30.514060470855657];
-										var myMap = new ymaps.Map("map", {
-														center: center,
-														zoom: 14
-												}),
-												myPlacemark = new ymaps.Placemark([59.8902120173829,30.514060470855657], {
-														balloonContentHeader: "",
-														balloonContentBody: "Кудрово, МЕГА ДЫБЕНКО",
-														balloonContentFooter: "",
-														hintContent: "Адрес"
-												});
-										myMap.geoObjects.add(myPlacemark);
-										myMap.behaviors.disable('scrollZoom');
-										if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-											myMap.behaviors.disable('drag');
-										}
-									};
-						mixin slide(i)
-							+e.slide.swiper-slide
-								+e.item
-									+pic(`slider-bg-${i}.jpg`, `bg`, 0)
-						+e.sliderContainer
-							+e.slider--js.swiper
-								.swiper-wrapper
-									+slide(1)
-									+slide(1)
-									+slide(3)
-									+slide(1)
-									+slide(3)
-									+slide(1)
-									+e.slide.swiper-slide
-										+e.item
-											+pic(`headerBlock-1.jpg`, `bg`, 0)
-							+arrow
+				.container 
+					.row
+						.col-lg-7
+							+b.section-title
+								+b.sm-yellow--title САНКТ-ПЕТЕРБУРГ / ЮГО-ВОСТОК / Дачный рай
+								h2 ОФИС КУДРОВО
+							+contactInfo-content('Адрес', 'Санкт-Петербург, Мурманское шоссе, 12-й километр, д. 21&nbsp;(на&nbsp;Выставке Экспо ДОМ Кудрово, территория ТРЦ &laquo;Мега Дыбенко&raquo; выставочный дом &#8470;&nbsp;21)')
+							+contactInfo-content('Телефон', '', '+7 (812) 942-94-69', 'tel:+78129429469')
+							+contactInfo-content('Телефон', '', '+7 (921) 746-93-31 (Андрей)', 'tel:+79217469331')
+							+contactInfo-content('Режим работы', '11:00-19:00 (без обеда и&nbsp;выходных)')
+							+contactInfo-content('E-mail', '', 'info@dachnyi-rai.ru', 'mailto:info@dachnyi-rai.ru')
+							+e.link(href="#") Смотреть проект выставочного дома К-91 / 121 кв. м. / 9,0 х 8,0 м
+							button записаться на экскурсию
+						.col-lg-5
+							+e.map
+								#map()
+								<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+								//- <div id="map"style="width:100%; height:360px"></div>
+							mixin slide(i, n)
+								+e.slide.swiper-slide
+									+e.item
+										+e.img-link(href=`img/@2x/slider-bg-big-${i}.png` data-fancybox=`slider-bg-${n}`)
+											+pic(`slider-bg-${i}.jpg`, `bg`, 0)
+							+e.sliderContainer
+								+e.slider--js.swiper
+									.swiper-wrapper
+										+slide(1, 1)
+										+slide(2, 2)
+										+slide(3, 3)
+										+slide(1, 4)
+										+slide(3, 5)
+										+slide(2, 6)
+								+arrow
+			+b.contactInfo-wrap--second
+				.container 
+					.row
+						.col-lg-5
+							+e.map
+								#map2()
+							mixin slide(i, n)
+								+e.slide.swiper-slide
+									+e.item
+										+e.img-link(href=`img/@2x/slider-bg-big-${i}.png` data-fancybox=`slider-bg-${n}`)
+											+pic(`slider-bg-${i}.jpg`, `bg`, 0)
+							+e.sliderContainer
+								+e.slider--js.swiper
+									.swiper-wrapper
+										+slide(4, 7)
+										+slide(5, 8)
+										+slide(6, 9)
+										+slide(5, 10)
+										+slide(6, 11)
+										+slide(4, 12)
+								+arrow
+						+e.col.col-lg-6
+							+b.section-title
+								+b.sm-yellow--title САНКТ-ПЕТЕРБУРГ / СЕВЕР
+								h2 ОФИС ВЫБОРКА
+							+contactInfo-content('Адрес', 'Санкт-Петербург, Выборгское шоссе, д.&nbsp;214. (Рядом с&nbsp;строительным гипермаркетом Леруа Мерлен)')
+							+contactInfo-content('Телефон', '', '+7 (812) 942-94-69', 'tel:+78129429469')
+							+contactInfo-content('Телефон', '', '+7 (921) 873-73-51 (Анатолий)', 'tel:+79218737351')
+							+contactInfo-content('Режим работы', '11:00-19:00 (без обеда и&nbsp;выходных)')
+							+contactInfo-content('E-mail', '', 'info@dachnyi-rai.ru', 'mailto:info@dachnyi-rai.ru')
+							+e.link(href="#") Смотреть проект выставочного дома К-44&nbsp;/ 120&nbsp;кв.&nbsp;м.&nbsp;/ 8,0&times;8,0&nbsp;м
+							button записаться на экскурсию
+			+b.contactInfo-wrap
+				.container 
+					.row
+						.col-lg-7
+							+b.section-title
+								+b.sm-yellow--title МОСКВА
+								h2 ТЦ&nbsp;&laquo;СИНДИКА&raquo;
+							+contactInfo-content('Адрес', 'Сг. Москва, 65&nbsp;км МКАД, ТЦ&nbsp;&laquo;СИНДИКА&raquo;, номер выставочного образца: Д-01')
+							+contactInfo-content('Телефон', '', '+7 (929) 972-75-64', 'tel:+79299727564')
+							+contactInfo-content('Режим работы', '11:00-19:00 (без обеда и&nbsp;выходных)')
+							+contactInfo-content('E-mail', '', 'msk@dachnyi-rai.ru', 'mailto:msk@dachnyi-rai.ru')
+							+e.link(href="#") Смотреть проект выставочного дома К-44&nbsp;/ 128&nbsp;кв.&nbsp;м.&nbsp;/ 8,0&times;8,0&nbsp;м с&nbsp;террасой&nbsp;и&nbsp;балконом
+							button записаться на экскурсию
+						.col-lg-5
+							+e.map
+								#map3()
+								<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+								//- <div id="map"style="width:100%; height:360px"></div>
+							mixin slide(i, n)
+								+e.slide.swiper-slide
+									+e.item
+										+e.img-link(href=`img/@2x/slider-bg-big-${i}.png` data-fancybox=`slider-bg-${n}`)
+											+pic(`slider-bg-${i}.jpg`, `bg`, 0)
+							+e.sliderContainer
+								+e.slider--js.swiper
+									.swiper-wrapper
+										+slide(7, 13)
+										+slide(8, 14)
+										+slide(9, 15)
+										+slide(8, 16)
+										+slide(7, 17)
+										+slide(9, 18)
+								+arrow
+			+b.contactInfo-wrap--second
+				.container 
+					.row
+						.col-lg-5
+							+e.map
+								#map4()
+							mixin slide(i, n)
+								+e.slide.swiper-slide
+									+e.item
+										+e.img-link(href=`img/@2x/slider-bg-big-${i}.png` data-fancybox=`slider-bg-${n}`)
+											+pic(`slider-bg-${i}.jpg`, `bg`, 0)
+							+e.sliderContainer
+								+e.slider--js.swiper
+									.swiper-wrapper
+										+slide(10, 19)
+										+slide(11, 20)
+										+slide(12, 21)
+										+slide(12, 22)
+										+slide(10, 23)
+										+slide(11, 24)
+								+arrow
+						+e.col.col-lg-6
+							+b.section-title
+								+b.sm-yellow--title НОВГОРОДСКАЯ ОБЛАСТЬ / ПЕСТОВО
+								h2 ПРОИЗВОДСТВЕННАЯ БАЗА
+							+contactInfo-content('Адрес', 'Новгородская область, г. Пестово, ул. Строителей д.2')
+							+contactInfo-content('Телефон', '', '+7 (962) 680-54-41 (Артем)', 'tel:+79626805441')
+							+contactInfo-content('Режим работы', '09:00-19:00 (пн - сб; выходной - воскресенье)')
+							+contactInfo-content('E-mail', '', 'direkt@dachnyi-rai.ru', 'mailto:direkt@dachnyi-rai.ru')
+							button задать вопрос
 	// end sContactInfoCard
+
+	script.
+		const map = document.querySelector('#map');
+		document.addEventListener('DOMContentLoaded', function(event) {
+			ymaps.ready(init);
+		});
+		function init () {
+			var center = [59.8902120173829,30.514060470855657];
+			var myMap = new ymaps.Map("map", {
+							center: center,
+							zoom: 14
+					}),
+					myPlacemark = new ymaps.Placemark([59.8902120173829,30.514060470855657], {
+							balloonContentHeader: "",
+							balloonContentBody: "Кудрово, МЕГА ДЫБЕНКО",
+							balloonContentFooter: "",
+							hintContent: "Адрес"
+					});
+			var myMap2 = new ymaps.Map("map2", {
+							center: [60.07460813500467,30.276414617721546],
+							zoom: 14
+					}),
+					myPlacemark2 = new ymaps.Placemark([60.07460813500467,30.276414617721546], {
+							balloonContentHeader: "",
+							balloonContentBody: "Кудрово, МЕГА ДЫБЕНКО",
+							balloonContentFooter: "",
+							hintContent: "Адрес"
+					});
+			var myMap3 = new ymaps.Map("map3", {
+							center: [55.808357198235946,37.38382091660734],
+							zoom: 14
+					}),
+					myPlacemark3 = new ymaps.Placemark([55.808357198235946,37.38382091660734], {
+							balloonContentHeader: "",
+							balloonContentBody: "Кудрово, МЕГА ДЫБЕНКО",
+							balloonContentFooter: "",
+							hintContent: "Адрес"
+					});
+			var myMap4 = new ymaps.Map("map4", {
+							center: [58.58034170698694,35.802243949737544],
+							zoom: 14
+					}),
+					myPlacemark4 = new ymaps.Placemark([58.58034170698694,35.802243949737544], {
+							balloonContentHeader: "",
+							balloonContentBody: "Кудрово, МЕГА ДЫБЕНКО",
+							balloonContentFooter: "",
+							hintContent: "Адрес"
+					});
+			myMap.geoObjects.add(myPlacemark);
+			myMap2.geoObjects.add(myPlacemark2);
+			myMap3.geoObjects.add(myPlacemark3);
+			myMap4.geoObjects.add(myPlacemark4);
+			myMap.behaviors.disable('scrollZoom');
+			myMap2.behaviors.disable('scrollZoom');
+			myMap3.behaviors.disable('scrollZoom');
+			myMap4.behaviors.disable('scrollZoom');
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+				myMap.behaviors.disable('drag');
+				myMap2.behaviors.disable('drag');
+				myMap3.behaviors.disable('drag');
+				myMap4.behaviors.disable('drag');
+			}
+		};

@@ -52,6 +52,9 @@
 			height: 100%;
 		}
 	}
+	&--contact-page {
+		background-color: $gray-100;
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
