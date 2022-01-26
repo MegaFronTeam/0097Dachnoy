@@ -1,3 +1,5 @@
-<!-- https://github.com/luckyone1221/0097Dachnoy -->
+<!-- https://megafronteam.github.io/0097Dachnoy -->
 
-1. <https://luckyone1221.github.io/0097Dachnoy/public/index.html>
+1. <https://megafronteam.github.io/0097Dachnoy/public/index.html>
+2. <https://megafronteam.github.io/0097Dachnoy/public/06-delivery.html>
+3. <https://megafronteam.github.io/0097Dachnoy/public/07-how-work.html>

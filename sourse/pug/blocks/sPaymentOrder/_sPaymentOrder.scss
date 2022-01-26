@@ -1,0 +1,40 @@
+// start .sPaymentOrder
+.sPaymentOrder {
+		--sPT: 0;
+		--sPB: 0;
+		// --sTPB: ;
+	.section-title {
+		padding-bottom: 0;
+		margin-bottom: rem(30);
+		h2 {
+			@include rfs(36px);
+		}
+	}
+	.paymentOrder-item {
+		&__number {
+			font-weight: 500;
+			font-size: rem(96);
+			line-height: 1.19em;
+		}
+		&__precent {
+			font-size: rem(36);
+			color: $yellow;
+			line-height: 1.19em;
+			vertical-align: top;
+			margin-top: rem(14);
+			display: inline-block;
+			margin-left: rem(8);
+		}
+		p {
+			font-size: rem(14);
+			line-height: 1.71em;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPaymentOrder

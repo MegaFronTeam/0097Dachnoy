@@ -1,0 +1,20 @@
+mixin paymentOrder-item()
+	+b.paymentOrder-item
+		+e.SPAN.number 15
+		+e.SPAN.precent  %
+		p При заключении Договора в&nbsp;офисе компании.
+
+mixin sPaymentOrder(data)
+	// start sPaymentOrder
+	+b.SECTION.sPaymentOrder.section#sPaymentOrder&attributes(attributes)
+		+b.section-title
+			+b.sm-yellow--title Порядок оплаты услуг компании Дачный Рай зависит от региона строительства.
+			h2 Порядок оплаты для Санкт-Петербурга и&nbsp;области
+		.row
+			.col-lg-4 
+				+paymentOrder-item()
+			.col-lg-4
+				| das
+			.col-lg-4
+				| das
+	// end sPaymentOrder
