@@ -1,0 +1,71 @@
+mixin contactInfo-content(title, text, tel, link)
+	+e.content
+		h6!= title
+		if text
+			p!= text
+		if tel 
+			a(href=`${link}`)!= tel
+
+mixin sContactInfoCard(data)
+	// start sContactInfoCard
+	+b.SECTION.sContactInfoCard.section#sContactInfoCard&attributes(attributes)
+		.container 
+			+b.contactInfo-wrap
+				.row
+					.col-lg-7
+						+b.section-title
+							+b.sm-yellow--title САНКТ-ПЕТЕРБУРГ / ЮГО-ВОСТОК / Дачный рай
+							h2 ОФИС КУДРОВО
+						+contactInfo-content('Адрес', 'Санкт-Петербург, Мурманское шоссе, 12-й километр, д. 21&nbsp;(на&nbsp;Выставке Экспо ДОМ Кудрово, территория ТРЦ &laquo;Мега Дыбенко&raquo; выставочный дом &#8470;&nbsp;21)')
+						+contactInfo-content('Телефон', '', '+7 (812) 942-94-69', 'tel:+78129429469')
+						+contactInfo-content('Телефон', '', '+7 (921) 746-93-31 (Андрей)', 'tel:+79217469331')
+						+contactInfo-content('Режим работы', '11:00-19:00 (без обеда и&nbsp;выходных)')
+						+contactInfo-content('E-mail', '', 'info@dachnyi-rai.ru', 'mailto:info@dachnyi-rai.ru')
+						+e.link(href="#") Смотреть проект выставочного дома К-91 / 121 кв. м. / 9,0 х 8,0 м
+						button записаться на экскурсию
+					.col-lg-5
+						+e.map
+							#map()
+							//- <div id="map"style="width:100%; height:360px"></div>
+							<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+							script.
+								const map = document.querySelector('#map');
+								document.addEventListener('DOMContentLoaded', function(event) {
+									ymaps.ready(init);
+								});
+								function init () {
+										var center = [59.8902120173829,30.514060470855657];
+										var myMap = new ymaps.Map("map", {
+														center: center,
+														zoom: 14
+												}),
+												myPlacemark = new ymaps.Placemark([59.8902120173829,30.514060470855657], {
+														balloonContentHeader: "",
+														balloonContentBody: "Кудрово, МЕГА ДЫБЕНКО",
+														balloonContentFooter: "",
+														hintContent: "Адрес"
+												});
+										myMap.geoObjects.add(myPlacemark);
+										myMap.behaviors.disable('scrollZoom');
+										if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+											myMap.behaviors.disable('drag');
+										}
+									};
+						mixin slide(i)
+							+e.slide.swiper-slide
+								+e.item
+									+pic(`slider-bg-${i}.jpg`, `bg`, 0)
+						+e.sliderContainer
+							+e.slider--js.swiper
+								.swiper-wrapper
+									+slide(1)
+									+slide(1)
+									+slide(3)
+									+slide(1)
+									+slide(3)
+									+slide(1)
+									+e.slide.swiper-slide
+										+e.item
+											+pic(`headerBlock-1.jpg`, `bg`, 0)
+							+arrow
+	// end sContactInfoCard

@@ -17,7 +17,7 @@ mixin sInfoAboutDelivery(data)
 				h2 Адрес производства
 				p Новгородская область, г. Пестово, ул. Строителей д.2
 				+e.map
-					#map(data-mark="img/svg/circle-map.svg")
+					#map
 					//- <div id="map"style="width:100%; height:360px"></div>
 					<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
 					script.
@@ -37,7 +37,7 @@ mixin sInfoAboutDelivery(data)
 												balloonContentHeader: "",
 												balloonContentBody: "Пестово, престово",
 												balloonContentFooter: "",
-												hintContent: "Адресс"
+												hintContent: "Адрес"
 										});
 								myMap.geoObjects.add(myPlacemark);
 

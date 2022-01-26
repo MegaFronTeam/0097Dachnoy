@@ -261,7 +261,18 @@ function eventHandler() {
 			clickable: true,
 		},
 	});
-
+	let sContactInfoSlider = new Swiper('.contactInfo-wrap__slider--js', {
+		// observer: true,
+		// observeParents: true,
+		slidesPerView: 3,
+		spaceBetween: 0,
+		// watchOverflow: true,
+		//loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
 	// modal window
 };
 if (document.readyState !== 'loading') {

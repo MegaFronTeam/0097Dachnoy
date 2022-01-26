@@ -10,14 +10,14 @@ include ../blocks/sWork/_sWork.pug
 //- include ../blocks/sLast/_sLast.pug
 //- include ../blocks/sTalk/_sTalk.pug
 include ../blocks/sVideo/_sVideo.pug
-include ../blocks/sInfoAboutDelivery/_sInfoAboutDelivery.pug
+include ../blocks/sContactInfoCard/_sContactInfoCard.pug
 
 block variables
 	- let  mainPage= 'inner-page' 
 	- let  bg='01-380.png'
 
 block title
-	- let  title= 'Как мы работаем'
+	- let  title= 'Контактная информация'
 	title= title
 block pagecontent
 	+b.fixed-btns
@@ -31,9 +31,8 @@ block pagecontent
 	+header()
 		+top-nav()
 	+topLine()
-	+page-head('Как мы работаем', 'Клиентам')
-	+inner-content()
-		+sInfoAboutDelivery()
+	+page-head('Контактная информация')
+	+sContactInfoCard()
 	+sVideo()
 	//- +headerBlock()
 	//- +sAbout()

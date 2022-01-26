@@ -1,20 +1,29 @@
-mixin paymentOrder-item()
+mixin paymentOrder-item(num, text)
 	+b.paymentOrder-item
-		+e.SPAN.number 15
+		+e.SPAN.number!= num
 		+e.SPAN.precent  %
-		p При заключении Договора в&nbsp;офисе компании.
+		p!= text
 
 mixin sPaymentOrder(data)
 	// start sPaymentOrder
 	+b.SECTION.sPaymentOrder.section#sPaymentOrder&attributes(attributes)
 		+b.section-title
 			+b.sm-yellow--title Порядок оплаты услуг компании Дачный Рай зависит от региона строительства.
-			h2 Порядок оплаты для Санкт-Петербурга и&nbsp;области
+			h2 Порядок оплаты для <br>Санкт-Петербурга и&nbsp;области
 		.row
-			.col-lg-4 
-				+paymentOrder-item()
-			.col-lg-4
-				| das
-			.col-lg-4
-				| das
+			.col-md-4 
+				+paymentOrder-item('15', 'При заключении Договора в&nbsp;офисе компании.')
+			.col-md-4
+				+paymentOrder-item('60', 'На&nbsp;месте строительства, после выгрузки материала и&nbsp;начала строительных работ. Клиенту предоставляется квитанция либо кассовый чек. Оплата производится наличным или безналичным расчетом.')
+			.col-md-4
+				+paymentOrder-item('25', 'На&nbsp;месте строительства, после завершения всех работ, по&nbsp;факту подписания акта приемки-сдачи объекта.')
+		h2 Порядок оплаты для других регионов
+		.row
+			.col-md-4
+				+paymentOrder-item('70', 'При заключении Договора на&nbsp;месте строительства в&nbsp;день начала работ.')
+			.col-md-4
+				+paymentOrder-item('30', 'На&nbsp;месте строительства, после завершения всех работ, по&nbsp;факту подписания акта приемки-сдачи объекта.')
+		+b.section-title--last
+			h6.sm-yellow Требуется ли предоплата?
+		p Предоплата не&nbsp;требуется в&nbsp;случае, если договор подписывается на&nbsp;месте строительства,&nbsp;по&nbsp;факту выгрузки материала. Если клиент желает заключить договор до&nbsp;начала строительства&nbsp;&mdash; требуется предоплата в&nbsp;размере&nbsp;15% от&nbsp;договора. В&nbsp;этом случае&nbsp;по&nbsp;факту выгрузки материала оплата составит&nbsp;60%, а&nbsp;по&nbsp;завершении строительства&nbsp;&mdash; 25%.
 	// end sPaymentOrder
