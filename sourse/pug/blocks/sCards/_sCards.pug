@@ -55,6 +55,25 @@ mixin sCardsContent(mod, addClasses='')
 				title: 'Каркасный дом К-6',
 			})
 
+mixin sCardsContent2(mod, addClasses='')
+	.tabs__content(class=addClasses)
+		+e.main-row.row
+			+sCardsItem({
+				mod: mod,
+				imgNum: 1,
+				title: 'Каркасный дом К-1',
+				tag: true,
+			})
+			+sCardsItem({
+				mod: mod,
+				imgNum: 2,
+				title: 'Каркасный дом К-14',
+			})
+			+sCardsItem({
+				mod: mod,
+				imgNum: 3,
+				title: 'Каркасный дом К-45',
+			})
 mixin sCardsItem(data)
 	.col-md-6.col-lg-4
 		+e.item

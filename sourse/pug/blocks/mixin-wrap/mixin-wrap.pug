@@ -68,4 +68,8 @@ mixin inner-content()
 						+input('Ваше имя')
 						+input('+7 (_ _ _) _ _ _ - _ _ - _ _', 'tel')
 						button(type='submit') Отправить
-						+in-c('checkbox', 'Согласен на обработку данных')
+						//- +in-c('checkbox', 'Согласен на обработку данных')
+						+e.LABEL.checkbox
+							input(type="checkbox" name="policy" checked class="invisible")
+							span.square
+							span.txt Согласен на обработку данных

@@ -1,0 +1,42 @@
+mixin sProjectCatalogDescription(data)
+	// start sProjectCatalogDescription
+	+b.sProjectCatalogDescription.section#sProjectCatalogDescription&attributes(attributes)
+		.container
+			.row
+				.col-lg-9
+					+e.P.text Компания &laquo;Дачный рай&raquo; из&nbsp;Санкт-Петербурга занимается строительством под ключ каркасных домов с&nbsp;2010&nbsp;года. Работаем по&nbsp;Ленинградской области, но&nbsp;также принимаем заказы со&nbsp;всей России. Ниже представлены наши типовые проекты. Но&nbsp;по&nbsp;желанию клиентов можем сделать в&nbsp;них перепланировку или полностью от&nbsp;начала разработать индивидуальный проект.
+					.row 
+						.col-md-3
+							a(href="#")
+								+pic('headerBlock-4.jpg', 'bg', 0)
+								span Каталог проектов
+						.col-md-3
+							a(href="#")
+								+pic('sLast-2.jpg', 'bg', 0)
+								span Фото готовых домов
+						.col-md-3
+							a(href="#")
+								+pic('calculator.jpg', 'bg', 0)
+								span Рассчитать стоимость
+						.col-md-3
+							a(href="#")
+								+pic('home-img.jpg', 'bg', 0)
+								span О технологии
+				.col-lg-3
+					+e.item
+						+e.img-wrap
+							img(src="img/svg/projectCatalog-img-1.svg", alt="")
+						p Строим из сухого каркаса
+					+e.item
+						+e.img-wrap
+							img(src="img/svg/projectCatalog-img-2.svg", alt="")
+						p Отсутствие усадки
+					+e.item
+						+e.img-wrap
+							img(src="img/svg/projectCatalog-img-3.svg", alt="")
+						p Гарантия 7 лет
+					+e.item
+						+e.img-wrap
+							img(src="img/svg/projectCatalog-img-4.svg", alt="")
+						p Славянские бригады
+	// end sProjectCatalogDescription

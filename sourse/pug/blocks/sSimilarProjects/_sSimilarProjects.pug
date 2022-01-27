@@ -1,0 +1,10 @@
+mixin sSimilarProjects(data)
+	// start sSimilarProjects
+	+b.SECTION.sSimilarProjects.section#sSimilarProjects&attributes(attributes)
+		.container
+			+b.sm-yellow--title вам может понравиться
+			h2 Похожие проекты
+			+b.sCards.section#sCards
+				+e.tabs-wrap.tabs__wrap
+					+sCardsContent2('2', 'active')
+	// end sSimilarProjects

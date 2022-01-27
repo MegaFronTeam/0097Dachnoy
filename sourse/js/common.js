@@ -273,6 +273,9 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev',
 		},
 	});
+	$('.dropdown__btn').click(function () {
+    $(this).parent().toggleClass( "active" );
+	});
 	// modal window
 };
 if (document.readyState !== 'loading') {

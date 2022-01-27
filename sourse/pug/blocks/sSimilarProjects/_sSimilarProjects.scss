@@ -1,0 +1,29 @@
+// start .sSimilarProjects
+.sSimilarProjects {
+	--sPT: #{rem(60)};
+	--sPB: #{rem(60)};
+	// --sTPB: ;
+	background-color: $white;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(120)};
+		--sPB: #{rem(120)};
+	}
+	h2 {
+		@include rfs(56px);
+		margin-bottom: rem(45);
+	}
+	.sCards {
+		--sPT: 0;
+		--sPB: 0;
+		&__tabs-wrap {
+			margin-bottom: 0;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sSimilarProjects

@@ -1,0 +1,55 @@
+mixin sSpecification(data)
+	// start sSpecification
+	+b.sSpecification.section#sSpecification&attributes(attributes)
+		.container
+			+e.wrap
+				+e.head-list
+					button(type="button").active Популярные
+					button(type="button") Размер
+					button(type="button") Этажность
+					button(type="button") Конструктив
+					button(type="button") Стиль
+				+e.type
+					button(type="button").active С коммуникациями
+					button(type="button") Каркасно-щитовые
+					button(type="button") Финские
+					button(type="button") Дачные
+					button(type="button") Для постоянного проживания
+					button(type="button") Зимние
+					button(type="button") Гостевые домики
+					button(type="button") Эконом класс
+				.row
+					.col-lg-6
+						+e.range
+							input(type='range' step='1' min='0' max='100' value='10' name='price')
+					.col-lg-6
+			+e.sorting
+				span Соритровка:
+				+b.dropdown 
+					+e.BUTTON.btn По номеру проекта
+						+icon('chevron-down')
+					.dropdown-menu
+						a.dropdown-item(href="#") По номеру проекта
+						a.dropdown-item(href="#") По номеру проекта
+						a.dropdown-item(href="#") По номеру проекта
+						a.dropdown-item(href="#") По номеру проекта
+				+e.option
+					+e.LABEL.checkbox
+						input(type="checkbox" name="popular" class="invisible")
+						span.square
+						span.txt Популярные
+					+e.LABEL.checkbox
+						input(type="checkbox" name="popular" class="invisible")
+						span.square
+						span.txt Новинка
+					+e.LABEL.checkbox
+						input(type="checkbox" name="popular" class="invisible")
+						span.square
+						span.txt Проекты по акции
+					+e.BUTTON.reset Сбросить
+			+b.sCards.section#sCards
+				+e.tabs-wrap.tabs__wrap
+					+sCardsContent('', 'active')
+				.text-center
+					+e.look-all(href="#") Смотреть все проекты
+	// end sSpecification

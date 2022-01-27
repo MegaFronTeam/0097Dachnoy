@@ -1,0 +1,52 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCards/_sCards.pug
+include ../blocks/sWork/_sWork.pug
+//- include ../blocks/sLast/_sLast.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sVideo/_sVideo.pug
+include ../blocks/sProjectCatalogDescription/_sProjectCatalogDescription.pug
+include ../blocks/sSpecification/_sSpecification.pug
+include ../blocks/sSimilarProjects/_sSimilarProjects.pug
+
+block variables
+	- let  mainPage= 'inner-page' 
+	- let  bg=''
+
+block title
+	- let  title= 'Каркасные дома'
+	title= title
+block pagecontent
+	+b.fixed-btns
+		+e.btn(href="#")
+			+icon('calculator')
+		+e.btn(href="#")
+			+icon('tell')
+		+e.btn(href="#")
+			+icon('chat')
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+topLine()
+	+page-head('Каркасные дома', 'Проекты домов')
+	+sProjectCatalogDescription()
+	+sSpecification()
+	+sSimilarProjects()
+	//- 
+	+sWork()
+	//- 
+	//- +headerBlock()
+	//- +sAbout()
+	//- +sCards()
+	//- +sLast()
+	//- +sTalk()
+	//- +sCatalog()
+	+sForm()
+	+sVideo()
+	+sContact()
+	//-+footer()
