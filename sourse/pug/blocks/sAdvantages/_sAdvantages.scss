@@ -1,0 +1,67 @@
+// start .sAdvantages
+.sAdvantages {
+	// --sPT: ;
+	--sPB: #{rem(30)};
+	// --sTPB: ;
+	@include media-breakpoint-up(lg) {
+		--sPB: #{rem(60)};
+	}
+	h2 {
+		@include rfs(56px);
+		margin-bottom: rem(40);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(91);
+		}
+	}
+	&__wrap {
+		display: flex;
+		margin-bottom: rem(52);
+		flex-direction: column;
+		align-items: center;
+		@include media-breakpoint-up(lg) {
+			align-items: flex-start;
+			flex-direction: row;
+		}
+		img {
+			margin-bottom: rem(20);
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__content {
+		max-width: rem(289);
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		@include media-breakpoint-up(lg) {
+			text-align: left;
+		}
+		h5 {
+			margin-bottom: rem(10);
+			&::after {
+				content: '';
+				display: block;
+				width: rem(28);
+				height: rem(2);
+				background-color: $yellow;
+				margin-top: rem(13);
+				margin-left: auto;
+				margin-right: auto;
+				@include media-breakpoint-up(lg) {
+					margin-left: unset;
+				}
+			}
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sAdvantages

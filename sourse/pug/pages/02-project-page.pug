@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sCatalog/_sCatalog.pug
+//- include ../blocks/sCards/_sCards.pug
+//- include ../blocks/sWork/_sWork.pug
+//- include ../blocks/sLast/_sLast.pug
+//- include ../blocks/sTalk/_sTalk.pug
+//- include ../blocks/sInfoAboutDelivery/_sInfoAboutDelivery.pug
+include ../blocks/sProject/_sProject.pug
+
+block variables
+	- let  mainPage= 'inner-page' 
+	- let  bg='01-380.png'
+
+block title
+	- let  title= 'Проект каркасного дома 6х8 с мансардой К-14'
+	title= title
+block pagecontent
+	+b.fixed-btns
+		+e.btn(href="#")
+			+icon('calculator')
+		+e.btn(href="#")
+			+icon('tell')
+		+e.btn(href="#")
+			+icon('chat')
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+topLine()
+	+page-head2('Проект каркасного дома 6х8 с мансардой К-14', 'Проект  дома' ,'Каркасные дома')
+	+sProject()
+	+sContact()
+	//-+footer()

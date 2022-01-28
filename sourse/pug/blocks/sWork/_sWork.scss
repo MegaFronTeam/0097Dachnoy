@@ -237,6 +237,9 @@
 			line-height: rem(24);
 		}
 	}
+	&--white-bg {
+		background-color: $white;
+	}
 	&__{}
 	&__{}
 } // end.sWork

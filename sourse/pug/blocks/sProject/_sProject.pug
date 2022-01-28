@@ -1,0 +1,28 @@
+mixin house-options-list(icon, text, char)
+	+e.item
+		+icon(icon)
+		p!= text
+		span!= char
+
+mixin sProject(data)
+	// start sProject
+	+b.sProject.section#sProject&attributes(attributes)
+		.container
+			.row
+				.col-lg-7
+					
+				.col-lg-5
+					+e.house-options
+						h5 Параметры дома:
+						+e.list
+							+e.item
+								+icon('parameter-1')
+								p Размер
+								span 91 м
+									sup 2
+							+house-options-list('parameter-1', 'Размер', '6 х 9 м')
+							+house-options-list('parameter-2', 'Площадь', '91 м2')
+							+house-options-list('parameter-3', 'Количество комнат', '4')
+							+house-options-list('parameter-4', 'Этажность', '1 + мансарда')
+							+house-options-list('parameter-5', 'Срок строительства:', '30 дней')
+	// end sProjects

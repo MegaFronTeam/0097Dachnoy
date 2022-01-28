@@ -1,4 +1,4 @@
-mixin sLast(data)
+mixin sLast(title)
 	// start sLast
 	+b.SECTION.sLast.section#sLast&attributes(attributes)
 		.container
@@ -6,7 +6,7 @@ mixin sLast(data)
 			+b.section-title
 				+e.row.row
 					.col-lg
-						h2 Последние проекты
+						h2!= title
 					.col-lg-auto.d-none.d-sm-block
 						p Ознакомьтесь с последними реализованными нашей компанией проектами.
 			+e.slider-wrap

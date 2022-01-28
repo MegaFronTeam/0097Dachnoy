@@ -91,6 +91,9 @@
 
 .inner-page {
 	background-color: $gray-100;
+}
+
+.col--main {
 	.sWork {
 		@include media-breakpoint-down(lg) {
 			margin-bottom: rem(40);
@@ -115,9 +118,39 @@
 	h1 {
 		@include rfs(56px);
 	}
+	&__link {
+		background-color: $white;
+		padding: rem(24) rem(24) rem(25) rem(30);
+		color: $gray-900;
+		display: block;
+		span {
+			margin-bottom: rem(3);
+		}
+		h5 {
+			margin-bottom: rem(8);
+			span {
+				background-color: $yellow;
+			}
+		}
+		p {
+			color: $gray-670;
+			font-size: rem(14);
+			margin-bottom: 0;
+		}
+	}
 	@include media-breakpoint-down(lg) {
 		padding-top: rem(32);
 		padding-bottom: rem(32);
+	}
+	&--with-links {
+		padding-top: rem(30);
+		padding-bottom: rem(30);
+		.row {
+			--bs-gutter-y: var(--bs-gutter-x);
+		}
+		.breadcrumb {
+			margin-bottom: rem(31);
+		}
 	}
 }
 
@@ -291,6 +324,74 @@
 			a {
 				color: $gray-670;
 			}
+		}
+	}
+}
+
+.queueHouse {
+	margin-bottom: rem(50);
+	.row {
+		--bs-gutter-y: var(--bs-gutter-x);
+	}
+	.project-link {
+		display: flex;
+		align-items: center;
+		background-color: $white;
+		color: $gray-900;
+		@include media-breakpoint-up(lg) {
+			max-width: rem(588);
+		}
+		h5 {
+			@include mt;
+			margin-bottom: 0;
+		}
+		svg {
+			@include mt;
+			font-size: rem(24);
+		}
+		picture {
+			position: relative;
+			width: 100%;
+			@include block(190, 110);
+			max-width: rem(190);
+			img {
+				top: 0;
+				left: 0;
+				position: absolute;
+			}
+		}
+		&:hover {
+			h5 {
+				color: $yellow;
+			}
+			svg {
+				color: $yellow;
+			}
+		}
+		
+	}
+	&__prev-project {
+		padding-right: rem(10);
+		picture {
+			@include media-breakpoint-up(lg) {
+				margin-right: rem(38);
+			}
+		}
+		svg {
+			transform: rotate(180deg);
+			margin-right: rem(10);
+		}
+	}
+	&__next-project {
+		justify-content: flex-end;
+		padding-left: rem(10);
+		picture {
+			@include media-breakpoint-up(lg) {
+				margin-left: rem(38);
+			}
+		}
+		svg {
+			margin-left: rem(10);
 		}
 	}
 }

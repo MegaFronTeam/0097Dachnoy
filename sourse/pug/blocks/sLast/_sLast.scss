@@ -176,7 +176,9 @@
 		padding: rem(24) rem(39);
 	}
 	//-
-
+	&--white-bg {
+		background-color: $white;
+	}
 	&__{}
 	&__{}
 } // end.sLast

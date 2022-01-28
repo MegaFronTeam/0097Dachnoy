@@ -82,6 +82,7 @@
 			margin-right: rem(17);
 		}
 		.dropdown {
+			position: relative;
 			&.active {
 				.dropdown-menu {
 					display: flex;
@@ -109,10 +110,15 @@
 				}
 			}
 			&-menu {
+				position: absolute;
+				top: 30px;
+				left: 0;
 				display: none;
 				flex-direction: column;
 				border: 1px solid $gray-900;
 				border-radius: 6px;
+				z-index: 1;
+				background-color: $white;
 			}
 			&-item {
 				font-size: rem(14);

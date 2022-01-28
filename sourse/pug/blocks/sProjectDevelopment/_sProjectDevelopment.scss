@@ -1,0 +1,24 @@
+// start .sProjectDevelopment
+.sProjectDevelopment {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+	p {
+		&:not(:last-child) {
+			margin-bottom: rem(35);
+		}
+	}
+	picture {
+		@include media-breakpoint-down(lg) {
+			position: relative;
+			@include block(691, 391);
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sProjectDevelopment

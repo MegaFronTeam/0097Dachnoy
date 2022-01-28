@@ -1,0 +1,21 @@
+mixin advantages-item(i, title, text)
+	.col-md-6.col-lg-4 
+		+e.wrap
+			img(src=`img/svg/sAdvantages-img-${i}.svg`, alt="")
+			+e.content
+				h5!= title
+				p!= text
+mixin sAdvantages(data)
+	// start sAdvantages
+	+b.SECTION.sAdvantages.section#sAdvantages&attributes(attributes)
+		.container 
+			+b.sm-yellow--title Преимущества
+			h2 Преимущества каркасных домов
+			.row
+				+advantages-item(1, 'Натуральные материалы из&nbsp;дерева', 'Использование специальных шумоизолирующих креплений, а&nbsp;также дополнительных инновационных утеплителей.')
+				+advantages-item(2, 'Шумоизоляция', 'Дача без внутренних стен для исполнения индивидуальных желаний клиента.')
+				+advantages-item(3, 'Свободная планировка', 'Возможность купить собственное жилье или баню от 500 тысяч рублей.')
+				+advantages-item(4, 'Низкая стоимость', 'Возможность купить собственное жилье или баню от&nbsp;500 тысяч рублей.')
+				+advantages-item(5, 'Быстрая скорость постройки', 'Построить коттедж за&nbsp;месяц стало реальностью для городских жителей.')
+				+advantages-item(6, 'Строительство на&nbsp;сложных грунтах', 'Каркасники лёгкие, можно строить на&nbsp;самых разнообразных почвах с&nbsp;использованием винтовых свай.')
+	// end sAdvantages
