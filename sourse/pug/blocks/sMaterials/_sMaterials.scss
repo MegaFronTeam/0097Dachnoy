@@ -76,6 +76,33 @@
 			}
 		}
 	}
+	&__sum-up {
+		display: flex;
+		align-items: flex-end;
+		flex-wrap: wrap;
+		h5 {
+			font-size: rem(18);
+			font-weight: 800;
+			margin-right: rem(10);
+		}
+		span {
+			@include rfs(36px);
+			background-color: $yellow;
+			font-weight: 800;
+		}
+		button {
+			@extend .btn, .btn-outline-primary;
+			color: $gray-900;
+			text-transform: uppercase;
+			margin-bottom: rem(20);
+			margin-top: rem(20);
+			@include media-breakpoint-up(lg) {
+				margin-top: 0;
+				margin-bottom: 0;
+				margin-left: auto;
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
