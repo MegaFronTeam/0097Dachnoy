@@ -1,8 +1,9 @@
 mixin house-options-list(icon, text, char)
-	+e.item
+	+e.item-desc
 		+icon(icon)
 		p!= text
 		span!= char
+			block
 
 mixin sProject(data)
 	// start sProject
@@ -10,19 +11,89 @@ mixin sProject(data)
 		.container
 			.row
 				.col-lg-7
-					
+					mixin slide(img, tag)
+						+e.slide.swiper-slide
+							+e.item
+								if tag
+									.yellow-tag Популярный
+								+pic(img, `bg`, 0)
+					+e.sliderContainer
+						+e.slider--js.swiper
+							.swiper-wrapper
+								+slide('sCatalogSlide-1.jpg', 'tag')
+								+slide('sCards-6.jpg', '')
+						+arrow
+					+e.extra-photo 
+						+pic('sCards-2.jpg', 'bg', 0)
+						+pic('extra-photo-2.jpg', 'bg', 0)
+						+pic('extra-photo-3.jpg', 'bg', 0)
+						+pic('extra-photo-4.jpg', 'bg', 0)
+					+e.content
+						h5 Описание проекта:
+						p Проект &laquo;Каркасный дом К-14&raquo; от&nbsp;компании &laquo;Дачный Рай&raquo;: одноэтажный каркасный дом с&nbsp;мансардой, санузлом. Размер&nbsp;&mdash; 6&times;8м. Площадь&nbsp;&mdash; 79.5 кв.м.<br>Уютный одноэтажный дом на&nbsp;ухоженном участке&nbsp;&mdash; вовсе не&nbsp;мечта, а&nbsp;готовый проект каркасного дома 6&times;8&nbsp;с мансардой от&nbsp;компании &laquo;Дачный рай&raquo;. Наша разработка включает все решения, необходимые для приятного проживания на&nbsp;природе.
+						ul
+							li
+								+icon('advantage-img')
+								p Проект включает просторную мансарду с&nbsp;высоким потолком. Ее&nbsp;общая площадь&nbsp;&mdash; 31,5&nbsp;кв.&nbsp;м. лишь немногим уступает площади первого этажа&nbsp;&mdash; 40&nbsp;кв.&nbsp;м. По&nbsp;плану здесь предусмотрены 2&nbsp;спальни, однако владелец здания может в&nbsp;любой момент изменить назначение комнат.
+							li
+								+icon('advantage-img')
+								p На&nbsp;первом этаже расположена гостиная, кухня и&nbsp;спальня, а&nbsp;также санузел с&nbsp;удобной планировкой.
+							li
+								+icon('advantage-img')
+								p Крытая терраса на&nbsp;8&nbsp;кв.&nbsp;м. придает облику дома уют.
+						+e.P.postscriptum Мы изготавливаем домокомплект под ключ по Вашему заказу. Наша компания гарантирует самые сжатые сроки стройки – всего 30 дней.
+						+e.gifts
+							+e.gift 
+								img(src="img/svg/gift-1.svg", alt="")
+								p Бытовка <br>в подарок
+							+e.gift 
+								img(src="img/svg/gift-2.svg", alt="")
+								p Архитектурный раздел бесплатно
+							+e.gift 
+								img(src="img/svg/gift-3.svg", alt="")
+								p Гарантийное обслуживание дома 1 год
 				.col-lg-5
 					+e.house-options
 						h5 Параметры дома:
 						+e.list
-							+e.item
-								+icon('parameter-1')
-								p Размер
-								span 91 м
-									sup 2
 							+house-options-list('parameter-1', 'Размер', '6 х 9 м')
-							+house-options-list('parameter-2', 'Площадь', '91 м2')
+							+house-options-list('parameter-2', 'Площадь', '91 м')
+								sup 2
 							+house-options-list('parameter-3', 'Количество комнат', '4')
 							+house-options-list('parameter-4', 'Этажность', '1 + мансарда')
 							+house-options-list('parameter-5', 'Срок строительства:', '30 дней')
+						+e.BUTTON.order заказать дом
+						+e.btn-wrap
+							button купить в кредит
+							button мат. капитал
+						ul 
+							li
+								+icon('advantage-img')
+								span Любой вид фундамента
+								+icon('info')
+							li
+								+icon('advantage-img')
+								span 5 лет гарантии
+								+icon('info')
+							li
+								+icon('advantage-img')
+								span Свое производство
+								+icon('info')
+						+e.BUTTON.change изменить планировку
+						+e.socials
+							p Поделиться ссылкой
+							+soc()
+								//- +item-sos()
+					+b.consultation
+						h5 Нужна консультация?
+						p Мы перезвоним вам в течение 5&nbsp;минут и ответим на любые вопросы.
+						+form-wrap()
+							+input('Ваше имя')
+							+input('+7 (_ _ _) _ _ _ - _ _ - _ _', 'tel')
+							button(type='submit') Отправить
+							//- +in-c('checkbox', 'Согласен на обработку данных')
+							+e.LABEL.checkbox
+								input(type="checkbox" name="policy" checked class="invisible")
+								span.square
+								span.txt Согласен на обработку данных
 	// end sProjects

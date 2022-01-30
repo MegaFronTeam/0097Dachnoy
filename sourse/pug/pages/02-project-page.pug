@@ -5,12 +5,14 @@ include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
 //- include ../blocks/sAbout/_sAbout.pug
 include ../blocks/sCatalog/_sCatalog.pug
-//- include ../blocks/sCards/_sCards.pug
+include ../blocks/sCards/_sCards.pug
 //- include ../blocks/sWork/_sWork.pug
 //- include ../blocks/sLast/_sLast.pug
-//- include ../blocks/sTalk/_sTalk.pug
+include ../blocks/sTalk/_sTalk.pug
+include ../blocks/sForm/_sForm.pug
 //- include ../blocks/sInfoAboutDelivery/_sInfoAboutDelivery.pug
 include ../blocks/sProject/_sProject.pug
+include ../blocks/sMaterials/_sMaterials.pug
 
 block variables
 	- let  mainPage= 'inner-page' 
@@ -33,5 +35,9 @@ block pagecontent
 	+topLine()
 	+page-head2('Проект каркасного дома 6х8 с мансардой К-14', 'Проект  дома' ,'Каркасные дома')
 	+sProject()
+	+sMaterials()
+	+sTalk()
+	+sForm()
+	+sCatalog()
 	+sContact()
 	//-+footer()

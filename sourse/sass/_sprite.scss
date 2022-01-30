@@ -7,6 +7,10 @@
 	fill: currentColor;
 }
 
+.icon-advantage-img {
+	font-size:math.div(9,10)*1rem;
+	width: math.div(11,9)*1em;
+}
 .icon-arrow-right {
 	font-size:math.div(10,10)*1rem;
 	width: math.div(21,10)*1em;
@@ -30,6 +34,10 @@
 .icon-chevron-right {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
+}
+.icon-info {
+	font-size:math.div(19,10)*1rem;
+	width: math.div(19,19)*1em;
 }
 .icon-instagram {
 	font-size:math.div(20,10)*1rem;
@@ -58,6 +66,10 @@
 .icon-parameter-5 {
 	font-size:math.div(19,10)*1rem;
 	width: math.div(19,19)*1em;
+}
+.icon-print {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-size-icon {
 	font-size:math.div(23,10)*1rem;

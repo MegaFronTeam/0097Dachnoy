@@ -273,6 +273,20 @@ function eventHandler() {
 			prevEl: '.swiper-button-prev',
 		},
 	});
+
+	let sProjectSlider = new Swiper('.sProject__slider--js', {
+		// observer: true,
+		// observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		// watchOverflow: true,
+		//loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
 	$('.dropdown__btn').click(function () {
     $(this).parent().toggleClass( "active" );
 	});
