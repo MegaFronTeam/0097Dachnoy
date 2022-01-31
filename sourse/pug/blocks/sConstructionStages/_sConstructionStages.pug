@@ -4,17 +4,26 @@ mixin sConstructionStages(data)
 		.container
 			+b.sm-yellow--title этапы
 			h2 Этапы строительства
-			+e.tabs
-				+e.tabs-btn.active Подготовка
-				+e.tabs-btn Фундамент
-				+e.tabs-btn Перекрытия и стены
-				+e.tabs-btn Кровля
-				+e.tabs-btn Фасад
-				+e.tabs-btn Инженерия
-				+e.tabs-btn Отделка
-			+e.wrap
-				+e.content
-					p Первым подготовительным этапом при возведении каркасного дома являются земляные работы. В&nbsp;перечень данных мероприятий включают рытьё котлована, создание основания и&nbsp;подушки для фундамента здания, формирование канализационной, ливневой и&nbsp;дренажной системы, а&nbsp;также тщательное уплотнение грунта методом трамбовки специальным инструментом.
-				+e.wrap-bg
-					+pic('sConstructionStages-bg.jpg', 'bg', 0)
+			.tabs
+				+e.tabs.tabs__caption
+					+e.tabs-btn.tabs__btn.active Подготовка
+					+e.tabs-btn.tabs__btn Фундамент
+					+e.tabs-btn.tabs__btn Перекрытия и стены
+					+e.tabs-btn.tabs__btn Кровля
+					+e.tabs-btn.tabs__btn Фасад
+					+e.tabs-btn.tabs__btn Инженерия
+					+e.tabs-btn.tabs__btn Отделка
+				.tabs__wrap
+					mixin tab()
+						.tabs__content&attributes(attributes)
+							+e.wrap
+								+e.content
+									p Первым подготовительным этапом при возведении каркасного дома являются земляные работы. В&nbsp;перечень данных мероприятий включают рытьё котлована, создание основания и&nbsp;подушки для фундамента здания, формирование канализационной, ливневой и&nbsp;дренажной системы, а&nbsp;также тщательное уплотнение грунта методом трамбовки специальным инструментом.
+									block
+								+e.wrap-bg
+									+pic('sConstructionStages-bg.jpg', 'bg', 0)
+					+tab().active
+					- for (var x = 0; x < 6; x++)
+						+tab()
+							= x
 	// end sConstructionStages

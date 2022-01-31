@@ -24,10 +24,14 @@ mixin sProject(data)
 								+slide('sCards-6.jpg', '')
 						+arrow
 					+e.extra-photo 
-						+pic('sCards-2.jpg', 'bg', 0)
-						+pic('extra-photo-2.jpg', 'bg', 0)
-						+pic('extra-photo-3.jpg', 'bg', 0)
-						+pic('extra-photo-4.jpg', 'bg', 0)
+						+e.open-photo(href="img/@2x/extra-photo-big-1.png" data-fancybox="extra-photo-1")
+							+pic('sCards-2.jpg', 'bg', 0)
+						+e.open-photo(href="img/@2x/extra-photo-big-2.png" data-fancybox="extra-photo-1")
+							+pic('extra-photo-2.jpg', 'bg', 0)
+						+e.open-photo(href="img/@2x/extra-photo-big-3.png" data-fancybox="extra-photo-1")
+							+pic('extra-photo-3.jpg', 'bg', 0)
+						+e.open-photo(href="img/@2x/extra-photo-big-4.png" data-fancybox="extra-photo-1")
+							+pic('extra-photo-4.jpg', 'bg', 0)
 					+e.content
 						h5 Описание проекта:
 						p Проект &laquo;Каркасный дом К-14&raquo; от&nbsp;компании &laquo;Дачный Рай&raquo;: одноэтажный каркасный дом с&nbsp;мансардой, санузлом. Размер&nbsp;&mdash; 6&times;8м. Площадь&nbsp;&mdash; 79.5 кв.м.<br>Уютный одноэтажный дом на&nbsp;ухоженном участке&nbsp;&mdash; вовсе не&nbsp;мечта, а&nbsp;готовый проект каркасного дома 6&times;8&nbsp;с мансардой от&nbsp;компании &laquo;Дачный рай&raquo;. Наша разработка включает все решения, необходимые для приятного проживания на&nbsp;природе.
@@ -83,7 +87,11 @@ mixin sProject(data)
 						+e.socials
 							p Поделиться ссылкой
 							+soc()
-								//- +item-sos()
+								+item-sos('vkontakte')
+								+item-sos('twitter')
+								+item-sos('facebook')
+								+item-sos('whatsapp')
+								+item-sos('telegram')
 					+b.consultation
 						h5 Нужна консультация?
 						p Мы перезвоним вам в течение 5&nbsp;минут и ответим на любые вопросы.

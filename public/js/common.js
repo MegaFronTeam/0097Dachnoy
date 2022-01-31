@@ -287,6 +287,11 @@ function eventHandler() {
 		},
 	});
 
+	$(".js-range-slider").ionRangeSlider({
+		skin: "round",
+		type: "double"
+	});
+
 	$('.dropdown__btn').click(function () {
     $(this).parent().toggleClass( "active" );
 	});

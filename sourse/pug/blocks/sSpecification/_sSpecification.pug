@@ -1,38 +1,58 @@
+mixin button-checkbox(text)
+	label
+		input.btn-check(type='radio' name='name1' autocomplete='off')
+		.btn.btn-outline-primary()!= text
+
 mixin sSpecification(data)
 	// start sSpecification
 	+b.sSpecification.section#sSpecification&attributes(attributes)
 		.container
-			+e.wrap
-				+e.head-list
-					button(type="button").active Популярные
-					button(type="button") Размер
-					button(type="button") Этажность
-					button(type="button") Конструктив
-					button(type="button") Стиль
-				+e.type
-					button(type="button").active С коммуникациями
-					button(type="button") Каркасно-щитовые
-					button(type="button") Финские
-					button(type="button") Дачные
-					button(type="button") Для постоянного проживания
-					button(type="button") Зимние
-					button(type="button") Гостевые домики
-					button(type="button") Эконом класс
-				.row
-					.col-lg-6
-						+e.range
-							input(type='range' step='1' min='0' max='100' value='10' name='price')
-					.col-lg-6
+			.dd-group-js
+				.dd-head-js.d-flex.d-lg-none Сортировать
+					+icon('chevron-down')
+				+e.wrap.dd-content-js
+					+e.head-list
+						+e.head-wrap
+							button(type="button").active Популярные
+							button(type="button") Размер
+							button(type="button") Этажность
+							button(type="button") Конструктив
+							button(type="button") Стиль
+					+e.type
+						+button-checkbox('С коммуникациями')
+						+button-checkbox('Каркасно-щитовые')
+						+button-checkbox('Продажа')
+						+button-checkbox('Финские')
+						+button-checkbox('Дачные')
+						+button-checkbox('Для постоянного проживания')
+						+button-checkbox('Зимние')
+						+button-checkbox('Гостевые домики')
+						+button-checkbox('Эконом класс')
+					.row
+						.col-lg-6
+							+e.range
+								h6 Цена, руб:
+								input.js-range-slider#range(type='text' name='my_range' value='' data-min="882600" data-max="3086801" data-from="1000000" data-to="2086802")
+						.col-lg-6
+							+e.range--indent
+								h6 Площадь, руб:
+								input.js-range-slider#range2(type='text' name='my_range' value='' data-min="48" data-max="160" data-from="70" data-to="120")
 			+e.sorting
 				span Соритровка:
-				+b.dropdown 
-					+e.BUTTON.btn По номеру проекта
-						+icon('chevron-down')
-					.dropdown-menu
-						a.dropdown-item(href="#") По номеру проекта
-						a.dropdown-item(href="#") По номеру проекта
-						a.dropdown-item(href="#") По номеру проекта
-						a.dropdown-item(href="#") По номеру проекта
+				select
+					option(value="Выбрать") Выбрать
+					option(value="Выбрать1") Выбрать1
+					option(value="Выбрать2") Выбрать2
+					option(value="Выбрать3") Выбрать3
+					option(value="Выбрать4") Выбрать4
+				//- +b.dropdown 
+				//- 	+e.BUTTON.btn По номеру проекта
+				//- 		+icon('chevron-down')
+				//- 	.dropdown-menu
+				//- 		a.dropdown-item(href="#") По номеру проекта
+				//- 		a.dropdown-item(href="#") По номеру проекта
+				//- 		a.dropdown-item(href="#") По номеру проекта
+				//- 		a.dropdown-item(href="#") По номеру проекта
 				+e.option
 					+e.LABEL.checkbox
 						input(type="checkbox" name="popular" class="invisible")

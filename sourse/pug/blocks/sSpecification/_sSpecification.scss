@@ -6,8 +6,22 @@
 	@include media-breakpoint-up(lg) {
 		--sPB: #{rem(132)};
 	}
+	.dd-head-js {
+		width: 100%;
+		padding: rem(14) rem(16);
+		color: $gray-900;
+		background-color: $white;
+		border: 1px solid $gray-900;
+		border-radius: 5px;
+		align-items: center;
+    justify-content: space-between;
+		.icon {
+			fill: none;
+			stroke: currentColor;
+		}
+	}
 	&__wrap {
-		margin-bottom: rem(25);
+		// margin-bottom: rem(25);
 		background-color: $white;
 		padding: rem(30) rem(37.5) rem(36) rem(36);
 	}
@@ -15,6 +29,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		list-style-type: none;
+		overflow-x: auto;
+    position: relative;
 		button {
 			@extend .btn;
 			text-transform: uppercase;
@@ -37,6 +53,9 @@
 			}
 		}
 	}
+	&__head-wrap {
+		min-width: rem(655);
+	}
 	&__type {
 		margin-bottom: rem(14.5);
 		&::after {
@@ -47,7 +66,7 @@
 			background-color: $gray-550;
 			margin-top: rem(15.5);
 		}
-		button {
+		.btn {
 			@extend .btn;
 			color: $black;
 			font-weight: 500;
@@ -55,7 +74,7 @@
 			padding: rem(10) rem(15);
 			background-color: $gray-100;
 			margin-bottom: rem(10);
-			&.active {
+			&:checked {
 				background-color: $yellow;
 			}
 			&:hover {
@@ -63,16 +82,49 @@
 			}
 		}
 	}
-	// &__range {
-	// 	input[type="range"] {
-	// 		background-color: $yellow;
-	// 	}
-	// }
+	&__range {
+		h6 {
+			font-weight: normal;
+			font-size: rem(14);
+			color: $black;
+			margin-bottom: rem(19);
+		}
+		.irs {
+			&-from, &-to {
+				background-color: $yellow;
+				color: $gray-900;
+				&::before {
+					border-top-color: $yellow;
+				}
+			}
+			&-max, &-min {
+				top: 47px;
+				background-color: transparent;
+			}
+			&-bar {
+				background-color: $yellow;
+			}
+			&-handle {
+				width: 18px;
+				height: 18px;
+				background-color: $yellow;
+				border: none;
+				top: 29px;
+			}
+		}
+		&--indent {
+			padding-top: rem(30);
+			@include media-breakpoint-up(lg) {
+				padding-top: 0;
+			}
+		}
+	}
 	&__sorting {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 10px;
 		margin-bottom: rem(23);
+		padding-top: rem(25);
 		@include media-breakpoint-up(lg) {
 			gap: 0;
 		}
@@ -81,52 +133,20 @@
 			font-size: rem(14);
 			margin-right: rem(17);
 		}
-		.dropdown {
-			position: relative;
-			&.active {
-				.dropdown-menu {
-					display: flex;
-				}
-				.dropdown__btn {
-					svg {
-						transform: rotate(180deg);
-					}
-				}
+		select {
+			@include mt;
+			background-color: transparent;
+			border: none;
+			font-size: rem(14);
+			padding: 0;
+			&:hover {
+				color: $gray-670;
 			}
-			&__btn {
+			svg {
 				@include mt;
-				background-color: transparent;
-				border: none;
-				font-size: rem(14);
-				padding: 0;
-				&:hover {
-					color: $gray-670;
-				}
-				svg {
-					@include mt;
-					fill: none;
-					stroke: currentColor;
-					font-size: 7px;
-				}
-			}
-			&-menu {
-				position: absolute;
-				top: 30px;
-				left: 0;
-				display: none;
-				flex-direction: column;
-				border: 1px solid $gray-900;
-				border-radius: 6px;
-				z-index: 1;
-				background-color: $white;
-			}
-			&-item {
-				font-size: rem(14);
-				color: $gray-900;
-				padding: 5px;
-				&:hover {
-					color: $gray-670;
-				}
+				fill: none;
+				stroke: currentColor;
+				font-size: 7px;
 			}
 		}
 	}
@@ -141,7 +161,7 @@
 			gap: 5px;
 		}
 	}
-	&__checkbox{
+	&__checkbox {
 		cursor: pointer;
 		display: flex;
 		//align-items: center;
