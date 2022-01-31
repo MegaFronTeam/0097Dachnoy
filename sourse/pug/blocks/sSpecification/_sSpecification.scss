@@ -74,7 +74,7 @@
 			padding: rem(10) rem(15);
 			background-color: $gray-100;
 			margin-bottom: rem(10);
-			&:checked {
+			&:checked + .btn-outline-primary {
 				background-color: $yellow;
 			}
 			&:hover {
@@ -100,6 +100,7 @@
 			&-max, &-min {
 				top: 47px;
 				background-color: transparent;
+				visibility: visible !important;
 			}
 			&-bar {
 				background-color: $yellow;

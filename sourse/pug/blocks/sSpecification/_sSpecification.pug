@@ -1,7 +1,7 @@
 mixin button-checkbox(text)
 	label
-		input.btn-check(type='radio' name='name1' autocomplete='off')
-		.btn.btn-outline-primary()!= text
+		input.btn-check(type='radio' name='name1')
+		span.btn.btn-outline-primary()!= text
 
 mixin sSpecification(data)
 	// start sSpecification
@@ -45,14 +45,6 @@ mixin sSpecification(data)
 					option(value="Выбрать2") Выбрать2
 					option(value="Выбрать3") Выбрать3
 					option(value="Выбрать4") Выбрать4
-				//- +b.dropdown 
-				//- 	+e.BUTTON.btn По номеру проекта
-				//- 		+icon('chevron-down')
-				//- 	.dropdown-menu
-				//- 		a.dropdown-item(href="#") По номеру проекта
-				//- 		a.dropdown-item(href="#") По номеру проекта
-				//- 		a.dropdown-item(href="#") По номеру проекта
-				//- 		a.dropdown-item(href="#") По номеру проекта
 				+e.option
 					+e.LABEL.checkbox
 						input(type="checkbox" name="popular" class="invisible")
@@ -67,7 +59,7 @@ mixin sSpecification(data)
 						span.square
 						span.txt Проекты по акции
 					+e.BUTTON.reset Сбросить
-			+b.sCards.section#sCards
+			+b.sCards.section
 				+e.tabs-wrap.tabs__wrap
 					+sCardsContent('', 'active')
 				.text-center

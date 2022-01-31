@@ -15,6 +15,7 @@
 		margin-bottom: rem(20);
 		@include media-breakpoint-up(lg) {
 			margin-bottom: 0;
+			height: 100%;
 		}
 		&::before {
 			content: '';

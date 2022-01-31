@@ -130,6 +130,8 @@
 		}
 	}
 	&--second {
+	}
+	&:nth-child(2n) {
 		background-color: $white;
 		.contactInfo-wrap__col {
 			margin-left: 0;
