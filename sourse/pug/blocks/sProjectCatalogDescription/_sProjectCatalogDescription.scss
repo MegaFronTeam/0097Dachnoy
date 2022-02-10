@@ -18,6 +18,7 @@
 			height: 100%;
 		}
 		&::before {
+			@include mt;
 			content: '';
 			display: block;
 			position: absolute;
@@ -48,6 +49,9 @@
 			font-size: rem(14);
 		}
 		&:hover {
+			&::before {
+				box-shadow: 0 0 1.25rem rgb(0 0 0 / 15%);
+			}
 			img {
 				border-color: transparent;
 			}

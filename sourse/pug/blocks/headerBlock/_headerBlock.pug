@@ -7,7 +7,7 @@ mixin headerBlock()
 				h1 Загородные дома под&#160;ключ
 				p В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
 			+e.btn(href="#") Рассчитать проект
-			+e.know.d-none.d-md-block(href="#")
+			+e.know.d-none.d-md-block(href="#modal-video" data-fancybox="modal")
 				+e.k-txt Узнайте о компании за 2 минуты
 				+e.play-img
 					img(loading="lazy" src="img/svg/play-lined.svg" alt="")
@@ -39,7 +39,7 @@ mixin headerBlock()
 mixin headerBlockItem(data)
 	.col-sm-6.col-lg-3
 		+e.item(href="#")
-			+pic(`headerBlock-${data.imgNum}.jpg`)(class="plates__ball")
+			+pic(`headerBlock-${data.imgNum}.jpg`, '', 0)(class="plates__ball")
 			+e.box
 				+e.title=data.title
 				+e.projects=data.projects

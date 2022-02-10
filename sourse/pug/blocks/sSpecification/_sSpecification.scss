@@ -91,6 +91,7 @@
 		}
 		.irs {
 			&-from, &-to {
+				cursor: pointer;
 				background-color: $yellow;
 				color: $gray-900;
 				&::before {
@@ -106,6 +107,7 @@
 				background-color: $yellow;
 			}
 			&-handle {
+				cursor: pointer;
 				width: 18px;
 				height: 18px;
 				background-color: $yellow;
@@ -136,6 +138,7 @@
 		}
 		select {
 			@include mt;
+			cursor: pointer;
 			background-color: transparent;
 			border: none;
 			font-size: rem(14);

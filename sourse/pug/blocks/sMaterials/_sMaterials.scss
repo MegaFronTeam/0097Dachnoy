@@ -89,6 +89,7 @@
 			@include rfs(36px);
 			background-color: $yellow;
 			font-weight: 800;
+			padding: 0 4px;
 		}
 		button {
 			@extend .btn, .btn-outline-primary;

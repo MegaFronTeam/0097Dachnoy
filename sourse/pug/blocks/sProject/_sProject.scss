@@ -40,6 +40,12 @@
 			margin-bottom: rem(25);
 		}
 		li {
+			position: relative;
+			&:hover {
+				.sProject__hint {
+					display: block;
+				}
+			}
 			.icon-advantage-img {
 				color: $yellow;
 				font-size: rem(9);
@@ -51,6 +57,34 @@
 				stroke:  $yellow; 
 				margin-left: rem(7);
 			}
+		}
+	}
+	&__hint {
+		@include mt;
+		display: none;
+		position: absolute;
+		top: rem(25);
+		right: 0;
+		max-width: rem(300);
+		font-size: rem(14);
+		background-color: #fff;
+		padding: 10px;
+		z-index: 1;
+		box-shadow: 1px 1px 17px 1px rgb(0 0 0 / 15%);
+		border-radius: 10px;
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 30px;
+			background-color: transparent;
+			top: -20px;
+    	left: 0;
+			z-index: -1;
+		}
+		p {
+			margin-bottom: 0;
 		}
 	}
 	&__list {
@@ -128,8 +162,29 @@
 		}
 	}
 	.consultation {
+		@include mt;
 		@include media-breakpoint-up(lg) {
 			margin-left: -15px;
+		}
+		&:hover {
+			box-shadow: 0 0 1.25rem rgb(0 0 0 / 15%);
+		}
+	}
+	.form-wrap {
+		&__input {
+			border: 1px solid transparent;
+			&:hover {
+				border: 1px solid $gray-900;
+			}
+			&:focus {
+				border: 1px solid $gray-670;
+			}
+		}
+		button {
+			&:hover {
+				background-color: #d9b600;
+				border-color: #d9b600;
+			}
 		}
 	}
 	&__sliderContainer {
@@ -165,12 +220,18 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin-bottom: rem(70);
+		justify-content: center;
 		@include media-breakpoint-up(lg) {
+			justify-content: flex-start;
 			margin-right: 15px;
 		}
 		picture {
+			// @include block(342.5, 195);
 			max-width: rem(342.5);
 			max-height: rem(195);
+			@include media-breakpoint-up(lg) {
+				// max-width: rem(262);
+			}
 		}
 	}
 	&__content {

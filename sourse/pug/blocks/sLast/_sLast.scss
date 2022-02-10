@@ -82,9 +82,13 @@
 		}
 	}
 	&__item{
+		@include mt;
 		display: block;
 		position: relative;
 		z-index: 1;
+		&:hover {
+			box-shadow: 1px 3px 20px 0px rgba(0, 0, 0, 0.3);
+		}
 	}
 	&__img{
 		@extend .accept-ratio-frame;
@@ -174,6 +178,11 @@
 		text-align: center;
 		text-transform: uppercase;
 		padding: rem(24) rem(39);
+		&:hover {
+			background-color:#e3be00;
+			border-color: #e3be00;
+			// box-shadow: 1px 3px 8px 0 rgba(0, 0, 0, 0.3);
+		}
 	}
 	//-
 	&--white-bg {

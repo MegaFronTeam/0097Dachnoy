@@ -5,6 +5,10 @@
 	z-index: 1;
 
 	&__container{
+		margin-bottom: rem(132);
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+		}
 		@include media-breakpoint-down(sm){
 			padding-right: 10px;
 			padding-left: 10px;
@@ -12,7 +16,6 @@
 	}
 	//??
 
-	min-height: calc(var(--vh, 1vh)*100 - var(--header-h));
 	//min-height: rem(700);
 	//@include media-breakpoint-up(sm){
 	//	min-height: calc(var(--vh, 1vh)*100 - var(--header-h));
@@ -20,13 +23,14 @@
 	//@include media-breakpoint-up(xl){
 	//	min-height: rem(910);
 	//}
-
+	
 	--sPB: var(--plates-shift);
 	--sPT: #{rem(187)};
 	--sTPB: #{rem(50)};
 	@include media-breakpoint-up(md) {
 		--sPT: #{rem(180)};
 		--sTPB: #{rem(50)};
+		min-height: calc(var(--vh, 1vh)*100 - var(--header-h));
 	}
 	@include media-breakpoint-up(xl){
 		--sPT: #{rem(115)};
@@ -58,6 +62,7 @@
 		max-width: rem(870);
 		h1{
 			font-weight: 800;
+			color: $yellow;
 			//@include media-breakpoint-up(xl){
 			//	font-size: rem(80);
 			//}
@@ -153,8 +158,17 @@
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
+		&:hover {
+			.plates__box {
+				box-shadow: none;
+			}
+			.plates__ball {
+				border-color: transparent;
+			}
+		}
 	}
 	&__ball{
+		@include mt;
 		display: block;
 		overflow: hidden;
 		width: rem(124);
@@ -180,6 +194,7 @@
 		}
 	}
 	&__box{
+		@include mt;
 		flex-grow: 1;
 
 		background: $white;

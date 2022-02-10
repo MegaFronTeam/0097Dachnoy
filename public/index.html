@@ -225,7 +225,7 @@
 					</div>
 					<a class="headerBlock__btn" href="#">Рассчитать проект
 					</a>
-					<a class="headerBlock__know d-none d-md-block" href="#">
+					<a class="headerBlock__know d-none d-md-block" href="#modal-video" data-fancybox="modal">
 						<div class="headerBlock__k-txt">Узнайте о компании за 2 минуты
 						</div>
 						<div class="headerBlock__play-img"><img loading="lazy" src="img/svg/play-lined.svg" alt=""/>
@@ -240,10 +240,7 @@
 							<a class="plates__item" href="#">
 								<!-- picture-->
 								<picture class="plates__ball"> 
-									<source type="image/webp" srcset="img/@2x/webp/headerBlock-1.webp" media="(min-width:576px)"/>
-									<source type="image/webp" srcset="img/@1x/webp/headerBlock-1.webp"/>
-									<source type="image/jpg" srcset="img/@2x/headerBlock-1.jpg" media="(min-width:576px)"/>
-									<source type="image/jpg" srcset="img/@1x/headerBlock-1.jpg"/><img src="img/@2x/headerBlock-1.jpg" alt="" loading="lazy"/>
+									<source type="image/webp" srcset="img/@2x/webp/headerBlock-1.webp"/><img src="img/@2x/headerBlock-1.jpg" alt="" loading="lazy"/>
 								</picture>
 								<!-- /picture-->
 								<div class="plates__box">
@@ -284,10 +281,7 @@
 							<a class="plates__item" href="#">
 								<!-- picture-->
 								<picture class="plates__ball"> 
-									<source type="image/webp" srcset="img/@2x/webp/headerBlock-2.webp" media="(min-width:576px)"/>
-									<source type="image/webp" srcset="img/@1x/webp/headerBlock-2.webp"/>
-									<source type="image/jpg" srcset="img/@2x/headerBlock-2.jpg" media="(min-width:576px)"/>
-									<source type="image/jpg" srcset="img/@1x/headerBlock-2.jpg"/><img src="img/@2x/headerBlock-2.jpg" alt="" loading="lazy"/>
+									<source type="image/webp" srcset="img/@2x/webp/headerBlock-2.webp"/><img src="img/@2x/headerBlock-2.jpg" alt="" loading="lazy"/>
 								</picture>
 								<!-- /picture-->
 								<div class="plates__box">
@@ -328,10 +322,7 @@
 							<a class="plates__item" href="#">
 								<!-- picture-->
 								<picture class="plates__ball"> 
-									<source type="image/webp" srcset="img/@2x/webp/headerBlock-3.webp" media="(min-width:576px)"/>
-									<source type="image/webp" srcset="img/@1x/webp/headerBlock-3.webp"/>
-									<source type="image/jpg" srcset="img/@2x/headerBlock-3.jpg" media="(min-width:576px)"/>
-									<source type="image/jpg" srcset="img/@1x/headerBlock-3.jpg"/><img src="img/@2x/headerBlock-3.jpg" alt="" loading="lazy"/>
+									<source type="image/webp" srcset="img/@2x/webp/headerBlock-3.webp"/><img src="img/@2x/headerBlock-3.jpg" alt="" loading="lazy"/>
 								</picture>
 								<!-- /picture-->
 								<div class="plates__box">
@@ -372,10 +363,7 @@
 							<a class="plates__item" href="#">
 								<!-- picture-->
 								<picture class="plates__ball"> 
-									<source type="image/webp" srcset="img/@2x/webp/headerBlock-4.webp" media="(min-width:576px)"/>
-									<source type="image/webp" srcset="img/@1x/webp/headerBlock-4.webp"/>
-									<source type="image/jpg" srcset="img/@2x/headerBlock-4.jpg" media="(min-width:576px)"/>
-									<source type="image/jpg" srcset="img/@1x/headerBlock-4.jpg"/><img src="img/@2x/headerBlock-4.jpg" alt="" loading="lazy"/>
+									<source type="image/webp" srcset="img/@2x/webp/headerBlock-4.webp"/><img src="img/@2x/headerBlock-4.jpg" alt="" loading="lazy"/>
 								</picture>
 								<!-- /picture-->
 								<div class="plates__box">
@@ -3721,7 +3709,7 @@
 		</div>
 		<!--  start modals-->
 		<div id="modal-call" style="display: none">
-			<div class="modal-win">
+			<div class="modal-win modal-win--form">
 				<div class="form-wrap">
 					<form>
 						<div class="text-center">
@@ -3743,6 +3731,12 @@
 			</div>
 		</div>
 		<!-- #modal-call-->
+		<div id="modal-video" style="display: none">
+			<div class="modal-win modal-win--video">
+				<div class="video-wrap"><iframe src="https://www.youtube.com/embed/L_LUpnjgPso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
 		<!-- end modals--><script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>

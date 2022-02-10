@@ -22,14 +22,26 @@
 		margin: 0;
 		display: flex;
 		align-items: center;
-
+		
 		& > .menu-item{
 			--menu-item-me: #{rem(40)};
 			--arrow-w: #{rem(14)};
 			--arrow-ms: #{rem(3)};
 
 			margin-right: var(--menu-item-me);
-
+			&::after {
+				@include mt;
+				content: '';
+				display: block;
+				width: 0;
+				height: 2px;
+				background-color: #fff;
+			}
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
 			//all links
 			a{
 				font-weight: 500;
@@ -62,6 +74,7 @@
 					display: inline-block;
 					width: var(--arrow-w);
 					height: var(--arrow-w);
+					background-color: unset;
 
 					margin-left: var(--arrow-ms);
 
