@@ -17,7 +17,9 @@
 	}
 	&__img-wrap {
 		&--thumbs {
+			@include mt;
 			@include block(345, 195.5);
+			opacity: 0.5;
 		}
 	}
 	&__house-options {
@@ -349,6 +351,16 @@
 				font-size: rem(13);
 			}
 	
+		}
+	}
+	.swiper-slide {
+		&-thumb-active {
+			@include mt;
+			.sProject__img-wrap {
+				&--thumbs {
+					opacity: 1;
+				}
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {}
