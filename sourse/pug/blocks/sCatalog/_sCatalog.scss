@@ -41,7 +41,7 @@
 	&__top-row{
 		margin-bottom: rem(84);
 		@include media-breakpoint-up(sm){
-			margin-bottom: rem(50);
+			margin-bottom: rem(66);
 		}
 		--bs-gutter-y: #{rem(30)};
 	}
@@ -250,6 +250,7 @@
 		transform: translateX(-50%);
 		position: absolute;
 		top: rem(-60);
+		// top: rem(-42);
 		z-index: 10;
 		@include media-breakpoint-up(md) {
 			left: 56%;
