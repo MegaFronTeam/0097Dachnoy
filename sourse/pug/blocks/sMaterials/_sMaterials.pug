@@ -49,9 +49,10 @@ mixin sMaterials(data)
 						span 1 682 000 ₽
 						button зафиксировать стоимость
 				.col-lg-3
-					+e.info(href="#")
-						+icon('print')
-						span Печать проекта
-					+e.info(href="#")
-						span О технологии
+					+e.info-wrap
+						+e.info(href="#")
+							+icon('print')
+							span Печать проекта
+						+e.info(href="#")
+							span О технологии
 	// end sMaterials

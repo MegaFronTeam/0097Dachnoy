@@ -244,35 +244,44 @@
 	//-
 	&__arrow-cont{
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		// align-items: center;
+		// justify-content: center;
+		left: 50%;
+		transform: translateX(-50%);
+		position: absolute;
+		top: rem(-60);
+		z-index: 10;
+		@include media-breakpoint-up(md) {
+			left: 56%;
+			transform: translateX(0);
+		}
 	}
 	.swiper-button-prev,
 	.swiper-button-next {
 		@include media-breakpoint-up(sm){
-			position: absolute;
-			z-index: 10;
-			top: 50%;
-			transform: translateY(-50%);
+			// top: 50%;
+			// transform: translateY(-50%);
 		}
 	}
 	.swiper-button-prev{
-		margin-right: rem(10);
+		margin-right: rem(25);
+		right: 50%;
 		@include media-breakpoint-up(sm){
-			margin-right: 0;
-			right: calc(100% - #{rem(25)});
+			// margin-right: 0;
+			// right: calc(100% - #{rem(25)});
 		}
 		@include media-breakpoint-up(lg){
-			display: none;
-			right: calc(100% + #{rem(25)});
+			// display: none;
+			// right: calc(100% + #{rem(25)});
 		}
 	}
 	.swiper-button-next{
+		left: 50%;
 		@include media-breakpoint-up(sm){
-			left: calc(100% - #{rem(25)});
+			// left: calc(100% - #{rem(25)});
 		}
 		@include media-breakpoint-up(lg){
-			left: calc(100% + #{rem(25)});
+			// left: calc(100% + #{rem(25)});
 		}
 	}
 

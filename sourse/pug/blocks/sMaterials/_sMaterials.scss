@@ -24,6 +24,15 @@
 			border-bottom: 3px solid $yellow;
 		}
 	}
+	&__info-wrap {
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			flex-direction: column;
+		}
+		@include media-breakpoint-up(xl) {
+			flex-direction: row;
+		}
+	}
 	&__info {
 		&:not(:last-child) {
 			margin-right: rem(17);

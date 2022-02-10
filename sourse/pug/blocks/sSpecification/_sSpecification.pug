@@ -11,32 +11,46 @@ mixin sSpecification(data)
 				.dd-head-js.d-flex.d-lg-none Сортировать
 					+icon('chevron-down')
 				+e.wrap.dd-content-js
-					+e.head-list
-						+e.head-wrap
-							button(type="button").active Популярные
-							button(type="button") Размер
-							button(type="button") Этажность
-							button(type="button") Конструктив
-							button(type="button") Стиль
-					+e.type
-						+button-checkbox('С коммуникациями')
-						+button-checkbox('Каркасно-щитовые')
-						+button-checkbox('Продажа')
-						+button-checkbox('Финские')
-						+button-checkbox('Дачные')
-						+button-checkbox('Для постоянного проживания')
-						+button-checkbox('Зимние')
-						+button-checkbox('Гостевые домики')
-						+button-checkbox('Эконом класс')
-					.row
-						.col-lg-6
-							+e.range
-								h6 Цена, руб:
-								input.js-range-slider#range(type='text' name='my_range' value='' data-min="882600" data-max="3086801" data-from="1000000" data-to="2086802")
-						.col-lg-6
-							+e.range--indent
-								h6 Площадь, руб:
-								input.js-range-slider#range2(type='text' name='my_range' value='' data-min="48" data-max="160" data-from="70" data-to="120")
+					//- +e.head-list
+					//- 	+e.head-wrap
+					//- 		button(type="button").active Популярные
+					//- 		button(type="button") Популярные
+					//- 		button(type="button") Этажность
+					//- 		button(type="button") Конструктив
+					//- 		button(type="button") Стиль
+					.tabs.head-list
+						+e.tabs.tabs__caption.head-list
+							+e.tabs-btn.tabs__btn.active Популярные
+							+e.tabs-btn.tabs__btn Популярные
+							+e.tabs-btn.tabs__btn Этажность
+							+e.tabs-btn.tabs__btn Конструктив
+							+e.tabs-btn.tabs__btn Стиль
+						.tabs__wrap
+							mixin tab()
+								.tabs__content&attributes(attributes)
+									+e.content
+										+e.type
+											+button-checkbox('С коммуникациями')
+											+button-checkbox('Каркасно-щитовые')
+											+button-checkbox('Продажа')
+											+button-checkbox('Финские')
+											+button-checkbox('Дачные')
+											+button-checkbox('Для постоянного проживания')
+											+button-checkbox('Зимние')
+											+button-checkbox('Гостевые домики')
+											+button-checkbox('Эконом класс')
+										.row
+											.col-lg-6
+												+e.range
+													h6 Цена, руб:
+													input.js-range-slider#range(type='text' name='my_range' value='' data-min="882600" data-max="3086801" data-from="1000000" data-to="2086802")
+											.col-lg-6
+												+e.range--indent
+													h6 Площадь, руб:
+													input.js-range-slider#range2(type='text' name='my_range' value='' data-min="48" data-max="160" data-from="70" data-to="120")
+							+tab().active
+							- for (var x = 0; x < 4; x++)
+								+tab()
 			+e.sorting
 				span Соритровка:
 				select

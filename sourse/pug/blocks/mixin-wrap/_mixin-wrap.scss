@@ -25,9 +25,9 @@
 		color: $gray-680;
 		border: 1px solid $gray-680;
 		&:hover{
-			background-color: $gray-680;
+			background-color: $yellow;
 			.icon{
-				color: $white;
+				color: $gray-900;
 			}
 		}
 	}
@@ -110,8 +110,12 @@
 
 .page-head {
 	margin-top: var(--top-h);
-	padding-top: rem(60);
-	padding-bottom: rem(60);
+	padding-top: rem(32);
+	padding-bottom: rem(32);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(60);
+		padding-bottom: rem(60);
+	}
 	.breadcrumb {
 		margin-bottom: 0;
 	}
@@ -139,15 +143,17 @@
 			margin-bottom: 0;
 		}
 	}
-	@include media-breakpoint-down(lg) {
-		padding-top: rem(32);
-		padding-bottom: rem(32);
-	}
 	&--with-links {
-		padding-top: rem(30);
-		padding-bottom: rem(30);
+		padding-top: rem(20);
+		padding-bottom: rem(20);
+		@include media-breakpoint-up(md) {
+			padding-top: rem(30);
+			padding-bottom: rem(30);
+		}
 		.row {
-			--bs-gutter-y: var(--bs-gutter-x);
+			@include media-breakpoint-up(md) {
+				--bs-gutter-y: var(--bs-gutter-x);
+			}
 		}
 		.breadcrumb {
 			margin-bottom: rem(31);
@@ -330,10 +336,15 @@
 }
 
 .queueHouse {
-	margin-bottom: rem(50);
-	.row {
-		--bs-gutter-y: var(--bs-gutter-x);
+	margin-bottom: rem(25);
+	@include media-breakpoint-up(md) {
+		margin-bottom: rem(50);
 	}
+	// .row {
+	// 	@include media-breakpoint-up(lg) {
+	// 		--bs-gutter-y: var(--bs-gutter-x);
+	// 	}
+	// }
 	.project-link {
 		display: flex;
 		align-items: center;
@@ -345,20 +356,27 @@
 		h5 {
 			@include mt;
 			margin-bottom: 0;
+			@include media-breakpoint-up(lg) {
+				// font-size: rem();
+			}
 		}
 		svg {
 			@include mt;
 			font-size: rem(24);
 		}
 		picture {
-			position: relative;
-			width: 100%;
-			@include block(190, 110);
-			max-width: rem(190);
-			img {
-				top: 0;
-				left: 0;
-				position: absolute;
+			display: none;
+			@include media-breakpoint-up(md) {
+				display: block;
+				position: relative;
+				width: 100%;
+				@include block(190, 110);
+				max-width: rem(190);
+				img {
+					top: 0;
+					left: 0;
+					position: absolute;
+				}
 			}
 		}
 		&:hover {
@@ -394,5 +412,23 @@
 		svg {
 			margin-left: rem(10);
 		}
+	}
+}
+
+.back-top {
+	position:fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	background-color: $yellow;
+	bottom:30px;
+	right:30px;
+	z-index: 100;
+	.icon {
+		fill: none;
+		stroke: $gray-900;
+		transform: rotate(180deg);
 	}
 }

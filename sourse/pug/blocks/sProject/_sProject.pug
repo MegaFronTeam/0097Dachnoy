@@ -11,51 +11,51 @@ mixin sProject(data)
 		.container
 			.row
 				.col-lg-7
-					mixin slide(img, tag)
-						+e.slide.swiper-slide
-							+e.item
-								if tag
-									.yellow-tag Популярный
-								+pic(img, `bg`, 0)
-					+e.sliderContainer
+					//- mixin slide(img, tag)
+					//- 	+e.slide.swiper-slide
+					//- 		+e.item
+					//- 			if tag
+					//- 				.yellow-tag Популярный
+					//- 			+pic(img, `bg`, 0)
+					//- +e.sliderContainer
+					//- 	+e.slider--js.swiper
+					//- 		.swiper-wrapper
+					//- 			+slide('sCatalogSlide-1.jpg', 'tag')
+					//- 			+slide('sCards-6.jpg', '')
+					//- 	+arrow
+					//- +e.extra-photo 
+					//- 	+e.open-photo(href="img/@2x/extra-photo-big-1.png" data-fancybox="extra-photo-1")
+					//- 		+pic('sCards-2.jpg', 'bg', 0)
+					//- 	+e.open-photo(href="img/@2x/extra-photo-big-2.png" data-fancybox="extra-photo-1")
+					//- 		+pic('extra-photo-2.jpg', 'bg', 0)
+					//- 	+e.open-photo(href="img/@2x/extra-photo-big-3.png" data-fancybox="extra-photo-1")
+					//- 		+pic('extra-photo-3.jpg', 'bg', 0)
+					//- 	+e.open-photo(href="img/@2x/extra-photo-big-4.png" data-fancybox="extra-photo-1")
+					//- 		+pic('extra-photo-4.jpg', 'bg', 0)
+					+e.slider-wrap
 						+e.slider--js.swiper
 							.swiper-wrapper
-								+slide('sCatalogSlide-1.jpg', 'tag')
-								+slide('sCards-6.jpg', '')
-						+arrow
-					+e.extra-photo 
-						+e.open-photo(href="img/@2x/extra-photo-big-1.png" data-fancybox="extra-photo-1")
-							+pic('sCards-2.jpg', 'bg', 0)
-						+e.open-photo(href="img/@2x/extra-photo-big-2.png" data-fancybox="extra-photo-1")
-							+pic('extra-photo-2.jpg', 'bg', 0)
-						+e.open-photo(href="img/@2x/extra-photo-big-3.png" data-fancybox="extra-photo-1")
-							+pic('extra-photo-3.jpg', 'bg', 0)
-						+e.open-photo(href="img/@2x/extra-photo-big-4.png" data-fancybox="extra-photo-1")
-							+pic('extra-photo-4.jpg', 'bg', 0)
-					+e.content
-						h5 Описание проекта:
-						p Проект &laquo;Каркасный дом К-14&raquo; от&nbsp;компании &laquo;Дачный Рай&raquo;: одноэтажный каркасный дом с&nbsp;мансардой, санузлом. Размер&nbsp;&mdash; 6&times;8м. Площадь&nbsp;&mdash; 79.5 кв.м.<br>Уютный одноэтажный дом на&nbsp;ухоженном участке&nbsp;&mdash; вовсе не&nbsp;мечта, а&nbsp;готовый проект каркасного дома 6&times;8&nbsp;с мансардой от&nbsp;компании &laquo;Дачный рай&raquo;. Наша разработка включает все решения, необходимые для приятного проживания на&nbsp;природе.
-						ul
-							li
-								+icon('advantage-img')
-								p Проект включает просторную мансарду с&nbsp;высоким потолком. Ее&nbsp;общая площадь&nbsp;&mdash; 31,5&nbsp;кв.&nbsp;м. лишь немногим уступает площади первого этажа&nbsp;&mdash; 40&nbsp;кв.&nbsp;м. По&nbsp;плану здесь предусмотрены 2&nbsp;спальни, однако владелец здания может в&nbsp;любой момент изменить назначение комнат.
-							li
-								+icon('advantage-img')
-								p На&nbsp;первом этаже расположена гостиная, кухня и&nbsp;спальня, а&nbsp;также санузел с&nbsp;удобной планировкой.
-							li
-								+icon('advantage-img')
-								p Крытая терраса на&nbsp;8&nbsp;кв.&nbsp;м. придает облику дома уют.
-						+e.P.postscriptum Мы изготавливаем домокомплект под ключ по Вашему заказу. Наша компания гарантирует самые сжатые сроки стройки – всего 30 дней.
-						+e.gifts
-							+e.gift 
-								img(src="img/svg/gift-1.svg", alt="")
-								p Бытовка <br>в подарок
-							+e.gift 
-								img(src="img/svg/gift-2.svg", alt="")
-								p Архитектурный раздел бесплатно
-							+e.gift 
-								img(src="img/svg/gift-3.svg", alt="")
-								p Гарантийное обслуживание дома 1 год
+								mixin slide2(i)
+									+e.slide.swiper-slide
+										+e.img-wrap(href=`img/@2x/sProject-md-${i}.jpg` data-fancybox= "sCard-gallery")
+											//- img(src=`img/card-md-1.jpg` alt='')
+											+pic(`sProject-md-${i}.jpg`, `bg`, 0)
+								+slide2(1)
+								+slide2(1)
+								+slide2(1)
+								+slide2(1)
+							+arrow
+						+e.slider-thumbs--js.swiper
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										+e.img-wrap--thumbs.bg-wrap
+											+pic(`sProject-sm-${i}.jpg`, `bg`, 0).picture-bg
+											//- img(src=`img/@2x/sProject-sm-${i}.jpg` alt='')
+								+slide(1)
+								+slide(1)
+								+slide(1)
+								+slide(1)
 				.col-lg-5
 					+e.house-options
 						h5 Параметры дома:
@@ -98,6 +98,23 @@ mixin sProject(data)
 								+item-sos('facebook')
 								+item-sos('whatsapp')
 								+item-sos('telegram')
+			.row
+				.col-lg-7
+					+e.content
+						h5 Описание проекта:
+						p Проект &laquo;Каркасный дом К-14&raquo; от&nbsp;компании &laquo;Дачный Рай&raquo;: одноэтажный каркасный дом с&nbsp;мансардой, санузлом. Размер&nbsp;&mdash; 6&times;8м. Площадь&nbsp;&mdash; 79.5 кв.м.<br>Уютный одноэтажный дом на&nbsp;ухоженном участке&nbsp;&mdash; вовсе не&nbsp;мечта, а&nbsp;готовый проект каркасного дома 6&times;8&nbsp;с мансардой от&nbsp;компании &laquo;Дачный рай&raquo;. Наша разработка включает все решения, необходимые для приятного проживания на&nbsp;природе.
+						ul
+							li
+								+icon('advantage-img')
+								p Проект включает просторную мансарду с&nbsp;высоким потолком. Ее&nbsp;общая площадь&nbsp;&mdash; 31,5&nbsp;кв.&nbsp;м. лишь немногим уступает площади первого этажа&nbsp;&mdash; 40&nbsp;кв.&nbsp;м. По&nbsp;плану здесь предусмотрены 2&nbsp;спальни, однако владелец здания может в&nbsp;любой момент изменить назначение комнат.
+							li
+								+icon('advantage-img')
+								p На&nbsp;первом этаже расположена гостиная, кухня и&nbsp;спальня, а&nbsp;также санузел с&nbsp;удобной планировкой.
+							li
+								+icon('advantage-img')
+								p Крытая терраса на&nbsp;8&nbsp;кв.&nbsp;м. придает облику дома уют.
+						+e.P.postscriptum Мы изготавливаем домокомплект под ключ по Вашему заказу. Наша компания гарантирует самые сжатые сроки стройки – всего 30 дней.
+				.col-lg-5
 					+b.consultation
 						h5 Нужна консультация?
 						p Мы перезвоним вам в течение 5&nbsp;минут и ответим на любые вопросы.
@@ -110,4 +127,15 @@ mixin sProject(data)
 								input(type="checkbox" name="policy" checked class="invisible")
 								span.square
 								span.txt Согласен на обработку данных
+				.col-lg-7
+					+e.gifts
+						+e.gift 
+							img(src="img/svg/gift-1.svg", alt="")
+							p Бытовка <br>в подарок
+						+e.gift 
+							img(src="img/svg/gift-2.svg", alt="")
+							p Архитектурный раздел бесплатно
+						+e.gift 
+							img(src="img/svg/gift-3.svg", alt="")
+							p Гарантийное обслуживание дома 1 год
 	// end sProjects

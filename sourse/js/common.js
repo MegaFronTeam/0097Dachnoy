@@ -274,17 +274,60 @@ function eventHandler() {
 		},
 	});
 
-	let sProjectSlider = new Swiper('.sProject__slider--js', {
-		// observer: true,
-		// observeParents: true,
-		slidesPerView: 1,
+	// let sProjectSlider = new Swiper('.sProject__slider--js', {
+	// 	// observer: true,
+	// 	// observeParents: true,
+	// 	slidesPerView: 1,
+	// 	spaceBetween: 0,
+	// 	// watchOverflow: true,
+	// 	//loop: true,
+	// 	navigation: {
+	// 		nextEl: '.swiper-button-next',
+	// 		prevEl: '.swiper-button-prev',
+	// 	},
+	// });
+
+	var sProjectswiperThumbs = new Swiper(".sProject__slider-thumbs--js", {
+		loop: true,
 		spaceBetween: 0,
-		// watchOverflow: true,
-		//loop: true,
+		slidesPerView: 3,
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	var sProjectswiper2 = new Swiper(".sProject__slider--js", {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 1,
+		watchOverflow: false,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
 		},
+		thumbs: {
+			swiper: sProjectswiperThumbs,
+		}
+	});
+
+	// Прокрутка на верх 
+	$(function (){
+		// прячем кнопку #back-top
+		$("#back-top").hide();
+	
+		$(window).scroll(function (){
+			if ($(this).scrollTop() > 908){
+				$("#back-top").fadeIn();
+			} else{
+				$("#back-top").fadeOut();
+			}
+		});
+
+		// при клике на ссылку плавно поднимаемся вверх
+		$("#back-top a").click(function (){
+			$("body,html").animate({
+				scrollTop:0
+			}, 800);
+			return false;
+		});
 	});
 
 	$(".js-range-slider").ionRangeSlider({

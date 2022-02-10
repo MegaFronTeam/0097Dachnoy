@@ -40,12 +40,12 @@ mixin page-head2(title, ...items)
 		+b.queueHouse
 			.container
 				.row
-					.col-lg-6
+					.col-6
 						+e.prev-project.project-link(href="#")
 							+pic('sCards-4.jpg', 'bg', 0)
 							+icon('chevron-right')
 							h5 Проект дома К-10
-					.col-lg-6
+					.col-6
 						+e.next-project.project-link(href="#")
 							h5 Проект дома К-10
 							+icon('chevron-right')
@@ -112,13 +112,18 @@ mixin inner-content()
 							span.square
 							span.txt Согласен на обработку данных
 
-mixin housesQueue() 
-	+b.queueHouse
-		.container
-			.row
-				.col-lg-6
-					+e.prev-project 
-						+pic('sCards-4.jpg', 'bg', 0)
-						+e.content
-							+icon('chevron-right')
-							h5 Проект дома К-10
+mixin scrollToTop()
+	+b.back-top#back-top
+		a(href="#top")
+			+icon('chevron-down')
+
+//- mixin housesQueue() 
+//- 	+b.queueHouse
+//- 		.container
+//- 			.row
+//- 				.col-lg-6
+//- 					+e.prev-project 
+//- 						+pic('sCards-4.jpg', 'bg', 0)
+//- 						+e.content
+//- 							+icon('chevron-right')
+//- 							h5 Проект дома К-10

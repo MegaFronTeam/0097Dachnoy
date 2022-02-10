@@ -25,36 +25,38 @@
 		background-color: $white;
 		padding: rem(30) rem(37.5) rem(36) rem(36);
 	}
-	&__head-list {
+	.tabs {
 		display: flex;
 		flex-wrap: wrap;
 		list-style-type: none;
-		overflow-x: auto;
+		// overflow-x: auto;
     position: relative;
-		button {
-			@extend .btn;
-			text-transform: uppercase;
-			font-weight: 600;
-			padding: 0;
-			padding-bottom: rem(18);
-			border-bottom: 3px solid transparent;
-			color: $gray-670;
-			margin-bottom: rem(22);
-			&:not(:last-child) {
-				margin-right: rem(40);
-			}
-			&:hover {
-				border-bottom: 3px solid $yellow;
-				color: #ccab00;
-			}
-			&.active {
-				color: $gray-900;
-				border-bottom: 3px solid $yellow;
-			}
+	}
+	&__tabs-btn {
+		@extend .btn;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding: 0;
+		padding-bottom: rem(18);
+		border-bottom: 3px solid transparent;
+		color: $gray-670;
+		margin-bottom: rem(22);
+		&:not(:last-child) {
+			margin-right: rem(40);
+		}
+		&:hover {
+			border-bottom: 3px solid $yellow;
+			color: #ccab00;
+		}
+		&.active {
+			color: $gray-900;
+			border-bottom: 3px solid $yellow;
 		}
 	}
-	&__head-wrap {
-		min-width: rem(655);
+	&__tabs {
+		// min-width: rem(655);
+			// overflow-x: auto;
+			// position: relative;
 	}
 	&__type {
 		margin-bottom: rem(14.5);
@@ -139,6 +141,7 @@
 		select {
 			@include mt;
 			cursor: pointer;
+			align-self: flex-start;
 			background-color: transparent;
 			border: none;
 			font-size: rem(14);
