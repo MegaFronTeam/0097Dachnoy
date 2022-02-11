@@ -142,6 +142,10 @@
 			font-size: rem(14);
 			margin-bottom: 0;
 		}
+		&:hover {
+			box-shadow: 0 0 1.25rem rgb(0 0 0 / 15%);
+			color: inherit;
+		}
 	}
 	&--with-links {
 		padding-top: rem(20);
