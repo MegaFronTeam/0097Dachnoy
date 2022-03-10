@@ -339,6 +339,22 @@ function eventHandler() {
     $(this).parent().toggleClass( "active" );
 	});
 	// modal window
+
+	// header
+	var headerBlockswiper = new Swiper(".headerBlock__slider--js", {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true
+		}
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

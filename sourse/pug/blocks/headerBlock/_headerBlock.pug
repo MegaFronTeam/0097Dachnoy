@@ -1,39 +1,59 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		+pic('headerBlock-img.jpg')(class="headerBlock__bg")
-		+e.container.container-lg
-			+b.section-title
-				h1 Загородные дома под&#160;ключ
-				p В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
-			+e.btn(href="#") Рассчитать проект
-			+e.know.d-none.d-md-block(href="#modal-video" data-fancybox="modal")
-				+e.k-txt Узнайте о компании за 2 минуты
-				+e.play-img
-					img(loading="lazy" src="img/svg/play-lined.svg" alt="")
-	+b.plates
-		.container
-			+e.row.row
-				+headerBlockItem({
-					imgNum: 1,
-					title: 'Проекты каркасных домов',
-					projects: 'Проектов: 102',
-				})
-				+headerBlockItem({
-					imgNum: 2,
-					title: 'Проекты домов из бруса',
-					projects: 'Проектов: 80',
-				})
-				+headerBlockItem({
-					imgNum: 3,
-					title: 'Проекты бань из бруса',
-					projects: 'Проектов: 21',
-				})
-				+headerBlockItem({
-					imgNum: 4,
-					title: 'Проекты дачных домов',
-					projects: 'Проектов: 8',
-				})
+		//- +e.wrap
+		+e.slider--js.swiper
+			.swiper-wrapper
+				mixin slide()
+					+e.slide.swiper-slide
+						+pic('headerBlock-img.jpg')(class="headerBlock__bg")
+						+e.container.container-lg
+							+b.section-title
+								h1 Загородные дома под&#160;ключ
+								p В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
+							+e.btn(href="#") Рассчитать проект
+							+e.know.d-none.d-md-block(href="#modal-video" data-fancybox="modal")
+								+e.k-txt Узнайте о компании за 2 минуты
+								+e.play-img
+									img(loading="lazy" src="img/svg/play-lined.svg" alt="")
+				+slide()
+				+slide()
+				+slide()
+			+arrow()
+			.swiper-pagination
+		//- +pic('headerBlock-img.jpg')(class="headerBlock__bg")
+		//- +e.container.container-lg
+		//- 	+b.section-title
+		//- 		h1 Загородные дома под&#160;ключ
+		//- 		p В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
+		//- 	+e.btn(href="#") Рассчитать проект
+		//- 	+e.know.d-none.d-md-block(href="#modal-video" data-fancybox="modal")
+		//- 		+e.k-txt Узнайте о компании за 2 минуты
+		//- 		+e.play-img
+		//- 			img(loading="lazy" src="img/svg/play-lined.svg" alt="")
+	//- +b.plates
+	//- 	.container
+	//- 		+e.row.row
+	//- 			+headerBlockItem({
+	//- 				imgNum: 1,
+	//- 				title: 'Проекты каркасных домов',
+	//- 				projects: 'Проектов: 102',
+	//- 			})
+	//- 			+headerBlockItem({
+	//- 				imgNum: 2,
+	//- 				title: 'Проекты домов из бруса',
+	//- 				projects: 'Проектов: 80',
+	//- 			})
+	//- 			+headerBlockItem({
+	//- 				imgNum: 3,
+	//- 				title: 'Проекты бань из бруса',
+	//- 				projects: 'Проектов: 21',
+	//- 			})
+	//- 			+headerBlockItem({
+	//- 				imgNum: 4,
+	//- 				title: 'Проекты дачных домов',
+	//- 				projects: 'Проектов: 8',
+	//- 			})
 	// end headerBlock
 
 mixin headerBlockItem(data)
