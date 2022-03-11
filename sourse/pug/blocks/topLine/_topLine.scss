@@ -1,5 +1,102 @@
 // start .topLine
 .topLine {
+	.menu{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		
+		& > .menu-item{
+			--menu-item-me: #{rem(40)};
+			--arrow-w: #{rem(14)};
+			--arrow-ms: #{rem(3)};
+
+			margin-right: var(--menu-item-me);
+			&::after {
+				@include mt;
+				content: '';
+				display: block;
+				width: 0;
+				height: 2px;
+				background-color: #fff;
+			}
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+			//all links
+			a{
+				font-weight: 500;
+				font-size: rem(14);
+				line-height: 1;
+				color: $white;
+			}
+
+			& > a{
+				font-weight: 500;
+				font-size: rem(14);
+				line-height: 1;
+				color: $white;
+			}
+
+			&.menu-item-has-children{
+				&:hover{
+					--sub-mnu-scale: 1;
+				}
+
+
+				position: relative;
+				z-index: 10;
+				margin-right: calc(var(--menu-item-me) - var(--arrow-ms, 0px) - var(--arrow-w, 0px));
+
+				display: flex;
+				align-items: center;
+				&:after{
+					content: '';
+					display: inline-block;
+					width: var(--arrow-w);
+					height: var(--arrow-w);
+					background-color: unset;
+
+					margin-left: var(--arrow-ms);
+
+					background-image: url(../img/svg/chevron-down.svg);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+				}
+			}
+		}
+
+		.sub-menu{
+			@include mt();
+			transform-origin: top;
+			transform: scaleY(var(--sub-mnu-scale, 0));
+
+			padding: rem(12) rem(10);
+			background-color: $gray-900;
+			list-style: none;
+			position: absolute;
+			top: 100%;
+			left: rem(-10);
+			width: auto;
+			height: auto;
+			display: block;
+
+			.menu-item{
+				margin-bottom: rem(3);
+				display: block;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			a{
+				white-space: nowrap;
+			}
+		}
+	}
 	color: $white;
 	padding: rem(20) 0 rem(25) 0;
 	position: absolute;
