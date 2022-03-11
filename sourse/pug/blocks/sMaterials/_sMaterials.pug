@@ -13,46 +13,68 @@ mixin sMaterials(data)
 	+b.sMaterials.section#sMaterials&attributes(attributes)
 		.container
 			.row
-				.col-lg-9
-					.tabs
-						+e.tabs.tabs__caption
-							+e.link.tabs__btn.active СЕЗОННЫЙ: 1 682 000 РУБ. 
-							+e.link.tabs__btn ТЕПЛЫЙ КОНТУР: РАСЧИТЫВАЕТСЯ
-							+e.link.tabs__btn ЗИМНИЙ: 2 012 500 РУБ.
-						.tabs__wrap
-							mixin tab()
-								.tabs__content&attributes(attributes)
-									block
-									+materials-list('Основание:')
-										+materials-item('Основание дома', 'первый ряд обвязки из бруса 150х150мм.')
-										+materials-item('Второй ряд обвязки', 'торцевая доска 40х150мм.')
-									+materials-list('Силовой каркас:')
-										+materials-item('Стойки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Половые лаги', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Потолочные балки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Укосины', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Ригеля', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Перегородки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-									+materials-list('Силовой каркас:')
-										+materials-item('Стойки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Половые лаги', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Потолочные балки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Укосины', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Ригеля', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-										+materials-item('Перегородки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
-							+tab().active
-							- for (var x = 0; x < 2; x++)
-								+tab()
-									= x
-					+e.sum-up
-						h5 Стоимость строительства:
-						span 1 682 000 ₽
-						button зафиксировать стоимость
-				.col-lg-3
+				.col-12
 					+e.info-wrap
 						+e.info(href="#")
 							+icon('print')
 							span Печать проекта
 						+e.info(href="#")
 							span О технологии
+				.col
+					+e.head
+						p СЕЗОННЫЙ: 1&nbsp;682&nbsp;000&nbsp;РУБ. 
+						p ТЕПЛЫЙ КОНТУР: РАСЧИТЫВАЕТСЯ
+						p ЗИМНИЙ: 2&nbsp;012&nbsp;500&nbsp;РУБ.
+					+e.body
+						table
+							tr(colspan="5")
+								td 
+									h5 Основание:
+							tr
+								td
+									p Основание дома
+								td
+									p первый ряд обвязки из бруса 150х150мм. 
+								td 
+									+icon('check')
+								td
+									+icon('check')
+								td
+									+icon('check')
+									
+							
+					//- .tabs
+					//- 	+e.tabs.tabs__caption
+					//- 		+e.link.tabs__btn.active СЕЗОННЫЙ: 1 682 000 РУБ. 
+					//- 		+e.link.tabs__btn ТЕПЛЫЙ КОНТУР: РАСЧИТЫВАЕТСЯ
+					//- 		+e.link.tabs__btn ЗИМНИЙ: 2 012 500 РУБ.
+					//- 	.tabs__wrap
+					//- 		mixin tab()
+					//- 			.tabs__content&attributes(attributes)
+					//- 				block
+					//- 				+materials-list('Основание:')
+					//- 					+materials-item('Основание дома', 'первый ряд обвязки из бруса 150х150мм.')
+					//- 					+materials-item('Второй ряд обвязки', 'торцевая доска 40х150мм.')
+					//- 				+materials-list('Силовой каркас:')
+					//- 					+materials-item('Стойки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Половые лаги', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Потолочные балки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Укосины', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Ригеля', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Перегородки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 				+materials-list('Силовой каркас:')
+					//- 					+materials-item('Стойки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Половые лаги', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Потолочные балки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Укосины', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Ригеля', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 					+materials-item('Перегородки', 'сухой обрезной брусок 40&times;150мм.&nbsp;/ шаг 590мм.')
+					//- 		+tab().active
+					//- 		- for (var x = 0; x < 2; x++)
+					//- 			+tab()
+					//- 				= x
+					+e.sum-up
+						h5 Стоимость строительства:
+						span 1 682 000 ₽
+						button зафиксировать стоимость
 	// end sMaterials
