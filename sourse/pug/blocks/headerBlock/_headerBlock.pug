@@ -4,7 +4,7 @@ mixin headerBlock()
 		//- +e.wrap
 		+e.slider--js.swiper
 			.swiper-wrapper
-				mixin slide()
+				mixin slide(fancybox)
 					+e.slide.swiper-slide
 						+pic('headerBlock-img.jpg')(class="headerBlock__bg")
 						+e.container.container-lg
@@ -12,13 +12,14 @@ mixin headerBlock()
 								h1 Загородные дома под&#160;ключ
 								p В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
 							+e.btn(href="#") Рассчитать проект
-							+e.know.d-none.d-md-block(href="#modal-video" data-fancybox="modal")
+							+e.know.d-none.d-md-block(href="#modal-video" data-fancybox=`modal-video-${fancybox}`)
 								+e.k-txt Узнайте о компании за 2 минуты
 								+e.play-img
 									img(loading="lazy" src="img/svg/play-lined.svg" alt="")
-				+slide()
-				+slide()
-				+slide()
+				- for(let i = 0; i < 3; i++)
+					+slide(i)
+				//- +slide('modal-video1')
+				//- +slide('modal-video2')
 			+arrow()
 			.swiper-pagination
 		//- +pic('headerBlock-img.jpg')(class="headerBlock__bg")

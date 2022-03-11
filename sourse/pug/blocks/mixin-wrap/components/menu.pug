@@ -28,6 +28,11 @@ mixin mnuDef()
 mixin mnu()
 	ul.menu
 		li.menu-item.menu-item-has-children
+			a(href="#") Проекты 
+			ul.sub-menu
+				each sublinkPatch, sublinkName in subnav
+					li.menu-item: a(href=sublinkPatch)= sublinkName
+		li.menu-item.menu-item-has-children
 			a(href="#") О компании
 			ul.sub-menu
 				each sublinkPatch, sublinkName in subnav

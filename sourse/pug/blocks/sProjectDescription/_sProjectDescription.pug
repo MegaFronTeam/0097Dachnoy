@@ -1,0 +1,45 @@
+mixin sProjectDescription(data)
+	// start sProjectDescription
+	+b.SECTION.sProjectDescription.section#sProjectDescription&attributes(attributes)
+		.container
+			.row
+				.col-lg-7
+					+e.content
+						h5 Описание проекта:
+						p Проект &laquo;Каркасный дом К-14&raquo; от&nbsp;компании &laquo;Дачный Рай&raquo;: одноэтажный каркасный дом с&nbsp;мансардой, санузлом. Размер&nbsp;&mdash; 6&times;8м. Площадь&nbsp;&mdash; 79.5 кв.м.<br>Уютный одноэтажный дом на&nbsp;ухоженном участке&nbsp;&mdash; вовсе не&nbsp;мечта, а&nbsp;готовый проект каркасного дома 6&times;8&nbsp;с мансардой от&nbsp;компании &laquo;Дачный рай&raquo;. Наша разработка включает все решения, необходимые для приятного проживания на&nbsp;природе.
+						ul
+							li
+								+icon('advantage-img')
+								p Проект включает просторную мансарду с&nbsp;высоким потолком. Ее&nbsp;общая площадь&nbsp;&mdash; 31,5&nbsp;кв.&nbsp;м. лишь немногим уступает площади первого этажа&nbsp;&mdash; 40&nbsp;кв.&nbsp;м. По&nbsp;плану здесь предусмотрены 2&nbsp;спальни, однако владелец здания может в&nbsp;любой момент изменить назначение комнат.
+							li
+								+icon('advantage-img')
+								p На&nbsp;первом этаже расположена гостиная, кухня и&nbsp;спальня, а&nbsp;также санузел с&nbsp;удобной планировкой.
+							li
+								+icon('advantage-img')
+								p Крытая терраса на&nbsp;8&nbsp;кв.&nbsp;м. придает облику дома уют.
+						+e.P.postscriptum Мы изготавливаем домокомплект под ключ по Вашему заказу. Наша компания гарантирует самые сжатые сроки стройки – всего 30 дней.
+				.col-lg-5
+					+b.consultation
+						h5 Нужна консультация?
+						p Мы перезвоним вам в течение 5&nbsp;минут и ответим на любые вопросы.
+						+form-wrap()
+							+input('Ваше имя')
+							+input('+7 (_ _ _) _ _ _ - _ _ - _ _', 'tel')
+							button(type='submit') Отправить
+							//- +in-c('checkbox', 'Согласен на обработку данных')
+							+e.LABEL.checkbox
+								input(type="checkbox" name="policy" checked class="invisible")
+								span.square
+								span.txt Согласен на обработку данных
+				.col-lg-7
+					+e.gifts
+						+e.gift 
+							img(src="img/svg/gift-1.svg", alt="")
+							p Бытовка <br>в подарок
+						+e.gift 
+							img(src="img/svg/gift-2.svg", alt="")
+							p Архитектурный раздел бесплатно
+						+e.gift 
+							img(src="img/svg/gift-3.svg", alt="")
+							p Гарантийное обслуживание дома 1 год
+	// end sProjectDescription

@@ -233,6 +233,7 @@
 	padding: rem(30) rem(25) rem(30) rem(25);
 	background-color: $white;
 	margin-bottom: rem(45);
+	border: 1px solid $gray-550;
 	@include media-breakpoint-up(md) {
 		margin-bottom: rem(70);
 	}
@@ -367,6 +368,7 @@
 		svg {
 			@include mt;
 			font-size: rem(24);
+			min-width: rem(24);
 		}
 		picture {
 			display: none;
@@ -434,5 +436,11 @@
 		fill: none;
 		stroke: $gray-900;
 		transform: rotate(180deg);
+	}
+}
+
+.individual-project {
+	.page-head {
+		padding-bottom: 0;
 	}
 }

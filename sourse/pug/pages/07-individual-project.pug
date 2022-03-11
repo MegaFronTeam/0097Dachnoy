@@ -16,11 +16,11 @@ include ../blocks/sMaterials/_sMaterials.pug
 include ../blocks/sProjectDescription/_sProjectDescription.pug
 
 block variables
-	- let  mainPage= 'inner-page' 
+	- let  mainPage= 'inner-page individual-project' 
 	- let  bg='01-380.png'
 
 block title
-	- let  title= 'Проект каркасного дома 6х8 с мансардой К-14'
+	- let  title= 'Двухэтажный каркасный дом по индивидуальному проекту '
 	title= title
 block pagecontent
 	+b.fixed-btns
@@ -34,9 +34,9 @@ block pagecontent
 	+header()
 		+top-nav()
 	+topLine()
-	+page-head2('Проект каркасного дома 6х8 с мансардой К-14', 'true', 'sCards-4.jpg', 'sCards-4.jpg', 'Проект дома К-10', 'Проект дома К-10', 'Проект  дома' ,'Каркасные дома')
+	+page-head2('Проект каркасного дома 6х8 с мансардой К-14', 'true', 'sTalk-2.jpg', 'sTalk-3.jpg', 'Каркасный дом по индивидуальному проекту с просторной террасой', 'Индивидуальный каркасный дом с мансардой', 'Проект  дома' ,'Каркасные дома')
 	+sProject()
-	+sMaterials()
+	//- +sMaterials()
 	+sProjectDescription()
 	+sTalk()
 	+sForm()

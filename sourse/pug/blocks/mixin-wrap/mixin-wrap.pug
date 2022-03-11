@@ -35,43 +35,44 @@ mixin page-head(title, ...items)
 			h1!= title 
 			+breadcrumb('Главная', ...items)
 
-mixin page-head2(title, ...items)
+mixin page-head2(title, cost, imgLeft, imgRight, textLeft, textRight, ...items)
 	+b.page-head--with-links
 		+b.queueHouse
 			.container
 				.row
 					.col-6
 						+e.prev-project.project-link(href="#")
-							+pic('sCards-4.jpg', 'bg', 0)
+							+pic(`${imgLeft}`, 'bg', 0)
 							+icon('chevron-right')
-							h5 Проект дома К-10
+							h5!= textLeft
 					.col-6
 						+e.next-project.project-link(href="#")
-							h5 Проект дома К-10
+							h5!= textRight
 							+icon('chevron-right')
-							+pic('sCards-4.jpg', 'bg', 0)
+							+pic(`${imgRight}`, 'bg', 0)
 		.container 
 			h1!= title 
 			+breadcrumb('Главная', ...items)
-			.row 
-				.col-lg-4
-					+e.link(href="#")
-						span Комплектация
-						h5 Сезонный – 
-							span 1 682 000 ₽
-						p Что входит в стоимость?
-				.col-lg-4
-					+e.link(href="#")
-						span Комплектация
-						h5 Теплый контур –
-							span Рассчитать
-						p Что входит в стоимость?
-				.col-lg-4
-					+e.link(href="#")
-						span Комплектация
-						h5 Зимний –
-							span 2 012 500 ₽
-						p Что входит в стоимость?
+			if cost
+				.row 
+					.col-lg-4
+						+e.link(href="#")
+							span Комплектация
+							h5 Сезонный – 
+								span 1 682 000 ₽
+							p Что входит в стоимость?
+					.col-lg-4
+						+e.link(href="#")
+							span Комплектация
+							h5 Теплый контур –
+								span Рассчитать
+							p Что входит в стоимость?
+					.col-lg-4
+						+e.link(href="#")
+							span Комплектация
+							h5 Зимний –
+								span 2 012 500 ₽
+							p Что входит в стоимость?
 
 mixin inner-content()
 	.container.container--main

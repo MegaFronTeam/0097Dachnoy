@@ -348,7 +348,7 @@ function eventHandler() {
 
 	// header
 	var headerBlockswiper = new Swiper(".headerBlock__slider--js", {
-		loop: true,
+		loop: false,
 		spaceBetween: 0,
 		slidesPerView: 1,
 		navigation: {

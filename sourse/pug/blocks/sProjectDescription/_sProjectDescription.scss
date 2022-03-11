@@ -1,0 +1,86 @@
+// start .sProjectDescription
+.sProjectDescription {
+	--sPT: #{rem(62)};
+	--sPB: #{rem(62)};
+	// --sTPB: ;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(94)};
+		--sPB: #{rem(124)};
+	}
+	background-color: $white;
+	&__content {
+			@include media-breakpoint-up(lg) {
+				gap: 0;
+				max-width: rem(622);
+				margin-right: 15px;
+			}
+			h5 + p {
+				margin-bottom: rem(18);
+			}
+			ul {
+				margin-bottom: rem(25);
+				list-style-type: none;
+				.icon {
+					color: $yellow;
+					min-width: 11px;
+					font-size: rem(9);
+				}
+				li {
+					display: flex;
+					align-items: baseline;
+				}
+				p {
+					margin-left: rem(11);
+					margin-bottom: rem(10);
+				}
+			}
+		}
+		&__postscriptum {
+			font-size: rem(18);
+			font-style: italic;
+			font-weight: 500;
+			line-height: 1.72em;
+			margin-bottom: rem(37);
+		}
+		&__gifts {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin-bottom: rem(20);
+			gap: 20px;
+			@include media-breakpoint-up(md) {
+				gap: 0;
+			} 
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 0;
+			}
+		}
+		&__gift {
+			width: 100%;
+			max-width: rem(170);
+			text-align: center;
+			border: 1px solid $gray-550;
+			padding: rem(25) rem(20) rem(20) rem(20);
+			@include media-breakpoint-up(md) {
+				padding: rem(25) rem(25) rem(20) rem(25);
+				max-width: rem(199);
+			}
+			&:first-child {
+				padding-top: rem(31);
+			}
+			img {
+				margin-bottom: rem(10);
+			}
+			p {
+				font-size: rem(14);
+				margin-bottom: 0;
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sProjectDescription
