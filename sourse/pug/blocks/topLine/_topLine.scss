@@ -1,13 +1,14 @@
 // start .topLine
 .topLine {
 	color: $white;
-	padding: rem(22) 0;
+	padding: rem(20) 0 rem(25) 0;
 	position: absolute;
 	z-index: 1100;
 	top: var(--header-h);
 	left: 0;
 	width: 100%;
-	background-color: $gray-900;
+	// background-color: $gray-900;
+	background-color: rgba(21, 21, 21, 0.7);
 
 	&__container{
 		@include media-breakpoint-down(sm){
@@ -203,7 +204,9 @@
 	}
 
 	&--index {
-		background-color: transparent;
+		@include media-breakpoint-down(sm) {
+			background-color: transparent;
+		}
 	}
 	&__{}
 	&__{}

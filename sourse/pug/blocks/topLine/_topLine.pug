@@ -10,11 +10,12 @@ mixin topLine()
 						img(loading="lazy" src="img/@2x/logo.png" alt="")
 				.col-auto.d-none.d-lg-block
 					+e.menu
-						ul
-							li: a(href='#') Каркасные дома
-							li: a(href='#') Дома из бруса
-							li: a(href='#') Бани из бруса
-							li: a(href='#') Дачные дома
+						//- +mnu()
+						//- ul
+						//- 	li: a(href='#') Каркасные дома
+						//- 	li: a(href='#') Дома из бруса
+						//- 	li: a(href='#') Бани из бруса
+						//- 	li: a(href='#') Дачные дома
 				+e.s-col.col-auto.align-self-xl-start.s-col-js
 					+e.search
 						+input('Найти', 'text')

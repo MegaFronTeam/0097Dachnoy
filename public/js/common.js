@@ -249,18 +249,24 @@ function eventHandler() {
 		},
 	});
 	//
-	let sTalkSlider = new Swiper('.sTalk-slider-js', {
-		loop: true,
-		slidesPerView: "auto",
-		spaceBetween: 50,
-
-		//loop: true,
-		pagination: {
-			el: '.sTalk--js .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-		},
-	});
+	let pagi = document.querySelectorAll('.sTalk--js .swiper-pagination');
+	for (let index = 0; index < pagi.length; index++) {
+		
+		let sTalkSlider = new Swiper('.sTalk-slider-js', {
+			loop: true,
+			slidesPerView: "auto",
+			spaceBetween: 50,
+	
+			//loop: true,
+			pagination: {
+				el: pagi[index],
+				type: 'bullets',
+				clickable: true,
+			},
+			
+		});
+		
+	}
 	let sContactInfoSlider = new Swiper('.contactInfo-wrap__slider--js', {
 		// observer: true,
 		// observeParents: true,
