@@ -60,6 +60,7 @@
 		}
 	}
 	&__info-wrap {
+		text-align: right;
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			flex-direction: column;

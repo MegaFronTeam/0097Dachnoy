@@ -113,8 +113,8 @@
 	padding-top: rem(32);
 	padding-bottom: rem(32);
 	@include media-breakpoint-up(lg) {
-		padding-top: rem(60);
-		padding-bottom: rem(60);
+		padding-top: rem(32); /* 60*/
+		padding-bottom: rem(30);
 	}
 	.breadcrumb {
 		margin-bottom: 0;
@@ -399,7 +399,7 @@
 		padding-right: rem(10);
 		picture {
 			@include media-breakpoint-up(lg) {
-				margin-right: rem(38);
+				margin-right: rem(30);
 			}
 		}
 		svg {
@@ -412,7 +412,7 @@
 		padding-left: rem(10);
 		picture {
 			@include media-breakpoint-up(lg) {
-				margin-left: rem(38);
+				margin-left: rem(25);
 			}
 		}
 		svg {
@@ -442,5 +442,24 @@
 .individual-project {
 	.page-head {
 		padding-bottom: 0;
+		h1 {
+			margin-bottom: rem(19);
+		}
+		.breadcrumb {
+			margin-bottom: rem(23);
+		}
+	}
+	.project-link {
+		@include media-breakpoint-down(sm) {
+			word-break: break-word;
+		}
+		h5 {
+			font-size: 13px;
+		}
+	}
+	.queueHouse {
+		&__next-project {
+			text-align: right;
+		}
 	}
 }

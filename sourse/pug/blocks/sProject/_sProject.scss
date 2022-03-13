@@ -18,6 +18,16 @@
 		position: relative;
 	}
 	&__img-wrap {
+		&--slider {
+			@include block(690, 400);
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
 		&--thumbs {
 			@include mt;
 			@include block(345, 195.5);
@@ -26,7 +36,7 @@
 	}
 	&__house-options {
 		padding-top: rem(50);
-		padding-right: rem(65);
+		padding-right: rem(53);
 		padding-bottom: rem(50);
 		padding-left: rem(65);
 		background-color: $white;
@@ -358,6 +368,40 @@
 			.sProject__img-wrap {
 				&--thumbs {
 					opacity: 1;
+				}
+			}
+		}
+	}
+
+	table {
+		width: 100%;
+		margin-bottom: rem(53);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(153);
+		}
+		tr {
+			vertical-align: top;
+			&:not(:first-child) {
+				td {
+					padding: rem(13.4) 0;
+					border-bottom: 1px solid $gray-550;
+					p {
+						margin-bottom: 0;
+					}
+					&:first-child {
+						font-weight: 600;
+						padding-right: rem(15);
+						width: rem(190);
+					}
+					&:last-child {
+						font-weight: 500;
+						color: $gray-670;
+					}
+				}
+			}
+			&:nth-child(2) {
+				td {
+					padding-top: 0;
 				}
 			}
 		}

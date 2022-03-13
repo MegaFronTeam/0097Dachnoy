@@ -7,3 +7,4 @@
 5. <https://megafronteam.github.io/0097Dachnoy/public/05-payment.html>
 6. <https://megafronteam.github.io/0097Dachnoy/public/06-delivery.html>
 7. <https://megafronteam.github.io/0097Dachnoy/public/07-how-work.html>
+8. <https://megafronteam.github.io/0097Dachnoy/public/07-individual-project.html>

@@ -14,13 +14,15 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sProject/_sProject.pug
 include ../blocks/sMaterials/_sMaterials.pug
 include ../blocks/sProjectDescription/_sProjectDescription.pug
+include ../blocks/sSimilarProjects/_sSimilarProjects.pug
+include ../blocks/sVideo/_sVideo.pug
 
 block variables
 	- let  mainPage= 'inner-page individual-project' 
 	- let  bg='01-380.png'
 
 block title
-	- let  title= 'Двухэтажный каркасный дом по индивидуальному проекту '
+	- let  title= 'Двухэтажный каркасный дом по индивидуальному проекту'
 	title= title
 block pagecontent
 	+b.fixed-btns
@@ -34,13 +36,11 @@ block pagecontent
 	+header()
 		+top-nav()
 	+topLine()
-	+page-head2('Проект каркасного дома 6х8 с мансардой К-14', 'true', 'sTalk-2.jpg', 'sTalk-3.jpg', 'Каркасный дом по индивидуальному проекту с просторной террасой', 'Индивидуальный каркасный дом с мансардой', 'Проект  дома' ,'Каркасные дома')
+	+page-head2('Двухэтажный каркасный дом по индивидуальному проекту', '', 'sTalk-2.jpg', 'sTalk-3.jpg', 'Каркасный дом по индивидуальному проекту с просторной террасой', 'Индивидуальный каркасный дом с мансардой', 'Фотографии готовых домов' ,'Двухэтажный каркасный дом по индивидуальному проекту')
 	+sProject()
-	//- +sMaterials()
-	+sProjectDescription()
+	+sSimilarProjects('Популярные проекты')
 	+sTalk()
-	+sForm()
-	+sCatalog()
+	+sVideo()
 	+sContact()
 	+scrollToTop()
 	//-+footer()
