@@ -55,24 +55,31 @@ mixin page-head2(title, cost, imgLeft, imgRight, textLeft, textRight, ...items)
 			+breadcrumb('Главная', ...items)
 			if cost
 				.row 
-					.col-lg-4
-						+e.link(href="#")
-							span Комплектация
-							h5 Сезонный – 
-								span 1 682 000 ₽
-							p Что входит в стоимость?
-					.col-lg-4
-						+e.link(href="#")
-							span Комплектация
-							h5 Теплый контур –
-								span Рассчитать
-							p Что входит в стоимость?
-					.col-lg-4
-						+e.link(href="#")
-							span Комплектация
-							h5 Зимний –
-								span 2 012 500 ₽
-							p Что входит в стоимость?
+					+e.slider--js.swiper
+						.swiper-wrapper
+							mixin slide()
+								+e.slide.swiper-slide
+									//- .col-lg-4
+									+e.link(href="#")
+										span Комплектация
+										h5 Сезонный – 
+											span 1 682 000 ₽
+										p Что входит в стоимость?
+							+slide()
+							+slide()
+							+slide()
+					//- .col-lg-4
+					//- 	+e.link(href="#")
+					//- 		span Комплектация
+					//- 		h5 Теплый контур –
+					//- 			span Рассчитать
+					//- 		p Что входит в стоимость?
+					//- .col-lg-4
+					//- 	+e.link(href="#")
+					//- 		span Комплектация
+					//- 		h5 Зимний –
+					//- 			span 2 012 500 ₽
+					//- 		p Что входит в стоимость?
 
 mixin inner-content()
 	.container.container--main

@@ -348,7 +348,7 @@ function eventHandler() {
 
 	// header
 	var headerBlockswiper = new Swiper(".headerBlock__slider--js", {
-		loop: false,
+		loop: true,
 		spaceBetween: 0,
 		slidesPerView: 1,
 		navigation: {
@@ -358,6 +358,18 @@ function eventHandler() {
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true
+		}
+	});
+
+	var pageheadswiper = new Swiper(".page-head__slider--js", {
+		loop: true,
+		spaceBetween: 10,
+		slidesPerView: 1,
+		breakpoints: {
+			992: {
+				loop: false,
+				slidesPerView: 3,
+			}
 		}
 	});
 

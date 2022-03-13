@@ -355,14 +355,19 @@
 		align-items: center;
 		background-color: $white;
 		color: $gray-900;
+		height: 100%;
 		@include media-breakpoint-up(lg) {
 			max-width: rem(588);
 		}
 		h5 {
+			display: none;
 			@include mt;
 			margin-bottom: 0;
 			@include media-breakpoint-up(lg) {
 				// font-size: rem();
+			}
+			@include media-breakpoint-up(md) {
+				display: block;
 			}
 		}
 		svg {
@@ -371,19 +376,30 @@
 			min-width: rem(24);
 		}
 		picture {
-			display: none;
-			@include media-breakpoint-up(md) {
-				display: block;
-				position: relative;
-				width: 100%;
-				@include block(190, 110);
-				max-width: rem(190);
-				img {
-					top: 0;
-					left: 0;
-					position: absolute;
-				}
+			// display: none;
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			@include block(190, 110);
+			max-width: rem(190);
+			img {
+				top: 0;
+				left: 0;
+				position: absolute;
 			}
+			// @include media-breakpoint-up(md) {
+			// 	display: block;
+			// 	position: relative;
+			// 	width: 100%;
+			// 	@include block(190, 110);
+			// 	max-width: rem(190);
+			// 	img {
+			// 		top: 0;
+			// 		left: 0;
+			// 		position: absolute;
+			// 	}
+			// }
 		}
 		&:hover {
 			h5 {

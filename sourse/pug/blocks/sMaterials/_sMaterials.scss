@@ -23,7 +23,7 @@
 	table {
 		margin-right: 0;
 		width: 100%;
-		min-width: 500px;
+		min-width: 400px;
 		@include media-breakpoint-up(lg) {
 
 			td{
@@ -69,6 +69,9 @@
 			flex-direction: row;
 			justify-content: right;
 			margin-bottom: rem(42);
+		}
+		@include media-breakpoint-down(xl) {
+			margin-bottom: rem(20);
 		}
 	}
 	&__info {
@@ -163,6 +166,9 @@
 
 	th{
 		border-bottom: 3px solid  $primary;
+		@include media-breakpoint-down(lg) {
+			font-size: rem(14);
+		}
 	}
 	[colspan="5"] {
 		border: none !important;
@@ -206,8 +212,14 @@
 			background-color:  rgba(#E0E0E0, .5);
 			padding-top: 10px;
 			padding-bottom: 10px;
+			td {
+				&:first-child {
+					font-weight: 600;
+					border-bottom: 1px solid #E0E0E0;
+				}
+			}
 		}
-		&__title:not(:first-child){
+		&__title{
 			padding-top: 20px;
 		}
 	}
