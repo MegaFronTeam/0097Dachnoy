@@ -69,19 +69,21 @@
 
 				display: flex;
 				align-items: center;
-				&:after{
-					content: '';
-					display: inline-block;
-					width: var(--arrow-w);
-					height: var(--arrow-w);
-					background-color: unset;
-
-					margin-left: var(--arrow-ms);
-
-					background-image: url(../img/svg/chevron-down.svg);
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: contain;
+				@include media-breakpoint-up(lg) {
+					&:after{
+						content: '';
+						display: inline-block;
+						width: var(--arrow-w);
+						height: var(--arrow-w);
+						background-color: unset;
+	
+						margin-left: var(--arrow-ms);
+	
+						background-image: url(../img/svg/chevron-down.svg);
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: contain;
+					}
 				}
 			}
 		}
